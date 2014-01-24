@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+  <index name="to_remind" 
+         meta_type="BooleanIndex">
+    <indexed_attr value="to_remind"/>
+  </index>
+  <column value="to_remind"/>
+</object>

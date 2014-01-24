@@ -1,0 +1,707 @@
+# archgenxml generated POT File
+# unknown <unknown>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: ILOIntranetTypes\n"
+"POT-Creation-Date: Mon Oct 18 02:04:29 2010\n"
+"PO-Revision-Date: Mon Oct 18 02:04:29 2010\n"
+"Last-Translator: unknown <unknown>\n"
+"Language-Team: unknown <unknown>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: ILOIntranetTypes\n"
+
+#. Default: "Please keep to approx 500 words. Other relevant documents can be attached below."
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_MissionFindings"
+msgstr ""
+
+#. Default: "Please fill this section in short telex style."
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_SummaryAchievements"
+msgstr ""
+
+#. Default: "Select Administrative Unit(s). Hold down CTRL to select multiple entries."
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_help_administrative_unit"
+msgstr ""
+
+#. Default: "Please briefly describe key things a successor should do in order to be able to work effectively in this assignment / team / country."
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_help_advice"
+msgstr ""
+
+#. Default: "Please briefly describe key things a successor should not do in order to be able to work effectively in this assignment / team / country."
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_help_advice_not"
+msgstr ""
+
+#. Default: "Click on the + button to add additional members and - to reduce."
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_help_array:governing_body_membership"
+msgstr ""
+
+#. Default: "Please indicate your salary grade and step e.g. P4 - 10."
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_help_assignment_grade"
+msgstr ""
+
+#. Default: "Additional files to be attached to this report."
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_attachment1"
+msgstr ""
+
+#. Default: "Additional files to be attached to this report."
+#: ILOEvent.py
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_attachment2"
+msgstr ""
+
+#. Default: "Additional files to be attached to this report."
+#: ILOEvent.py
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_attachment3"
+msgstr ""
+
+#. Default: "Additional files to be attached to this report."
+#: ILOEvent.py
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_attachment4"
+msgstr ""
+
+#. Default: "Additional files to be attached to this report."
+#: ILOEvent.py
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_attachment5"
+msgstr ""
+
+#. Default: "If you have a list of participants, an agenda or other supportive documentation click browse and select the file to be uploaded."
+#: ILOEvent.py
+msgid "ILOIntranetTypes_help_attachment_attendees"
+msgstr ""
+
+#. Default: "List of authors. One name per line, with principal author first."
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_authors"
+msgstr ""
+
+#. Default: "Please enter the city (or cities) for this mission."
+#: Mission.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_city"
+msgstr ""
+
+#. Default: "List of professionals and/or organizations met with during the mission"
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_contacts"
+msgstr ""
+
+#. Default: "Comma separated list of who a copy of this mission report should be sent to. Select previous email addresses from drop down list, or type new email address followed by a comma. Copy will be sent, when Mission Report state is submitted."
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_distribution"
+msgstr ""
+
+#. Default: "Please select whether this was a domestic or international mission"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_help_domestic"
+msgstr ""
+
+#. Default: "In point form, include who should be doing what. One follow-up action per line."
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_followup"
+msgstr ""
+
+#. Default: "Please select member type. Hold down CTRL for multiple selections."
+#: GCMember.py
+msgid "ILOIntranetTypes_help_gc_type"
+msgstr ""
+
+#. Default: "Political Inclination of Head of Government's party or coalition and government"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_help_head_gov_politics"
+msgstr ""
+
+#. Default: "Countries covered by this report. Hold down CTRL to select multiple countries."
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_help_iib_countries"
+msgstr ""
+
+#. Default: "Focus on results, outcomes, impact - not detailed description of ILO activities and programes"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_help_impact"
+msgstr ""
+
+#. Default: "Please list top 10 professionals and/or organizations met / worked with during the assignment with details of why they are valuable and how to handle them?"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_help_key_contacts"
+msgstr ""
+
+#. Default: "Please briefly articulate key messages you wish a successor to take note of in order to be able to work effectively in this assignment / team / country."
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_help_key_message"
+msgstr ""
+
+#. Default: "Please list key resource mobilization opportunities / contacts that you are pursuing."
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_help_key_resources"
+msgstr ""
+
+#. Default: "CABINET to complete"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_help_labour_minister_last_meeting"
+msgstr ""
+
+#. Default: "Please briefly describe key lessons a successor should take note of do in order to be able to work effectively in this assignment / team / country."
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_help_lessons_learned"
+msgstr ""
+
+#. Default: "List of Mission Members. One name per line with principal member first."
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_help_members"
+msgstr ""
+
+#. Default: "Please select the country (or countries) for this mission. Hold down CTRL to select multiple countries."
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_help_mission_location"
+msgstr ""
+
+#. Default: "If Other Regions was selected, please specify country location."
+#: Mission.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_mission_location_other"
+msgstr ""
+
+#. Default: "Please select office you belong to. Hold down CTRL to select multiple offices."
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_help_office"
+msgstr ""
+
+#. Default: "Enter outcome code here eg. IDN 101"
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_outcome"
+msgstr ""
+
+#. Default: "Please fill in briefly on how this mission contributed to realizing country/regional outcome."
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_outcome_text"
+msgstr ""
+
+#. Default: "Enter outcome code here eg. IDN 101"
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_outome"
+msgstr ""
+
+#. Default: "Please list one outstanding issue or follow-up action per line."
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_help_outstanding_issues"
+msgstr ""
+
+#. Default: "Positive / negative key issues (e.g. country’s response to the Global Jobs Pact"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_help_overall_situation_analytical"
+msgstr ""
+
+#. Default: "Political Inclination of Prime Minister's party or coalition and government"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_help_pm_politics"
+msgstr ""
+
+#. Default: "Political Inclination  of President's party or coalition and government"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_help_president_politics"
+msgstr ""
+
+#. Default: "Brief Key Points - One point per line"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_help_socio_economic_context"
+msgstr ""
+
+#. Default: "Select Technical Unit(s). Hold down CTRL to select multiple entries."
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_help_technical_unit"
+msgstr ""
+
+#. Default: "Select the related themes. Hold CTRL to make multiple selections."
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_help_theme"
+msgstr ""
+
+#. Default: "If Other is selected, please fill in this field."
+#: Mission.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_help_theme_other"
+msgstr ""
+
+#. Default: "Mission Findings"
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_MissionFindings"
+msgstr ""
+
+#. Default: "Summary of Main Achievements"
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_SummaryAchievements"
+msgstr ""
+
+#. Default: "Administrative Unit"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_administrative_unit"
+msgstr ""
+
+#. Default: "Top 5 things you would advice your successor to do"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_advice"
+msgstr ""
+
+#. Default: "Top 5 things you would advice your successor not to do"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_advice_not"
+msgstr ""
+
+#. Default: "Governing Body Membership"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_array:governing_body_membership"
+msgstr ""
+
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_assignment_grade"
+msgstr ""
+
+#. Default: "Assignment Title"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_assignment_title"
+msgstr ""
+
+#. Default: "File attachment 1"
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_attachment1"
+msgstr ""
+
+#. Default: "File Attachment 2"
+#: ILOEvent.py
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_attachment2"
+msgstr ""
+
+#. Default: "File Attachment 3"
+#: ILOEvent.py
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_attachment3"
+msgstr ""
+
+#. Default: "File Attachment 4"
+#: ILOEvent.py
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_attachment4"
+msgstr ""
+
+#. Default: "File Attachment 5"
+#: ILOEvent.py
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_attachment5"
+msgstr ""
+
+#. Default: "File Attachment 1"
+#: ILOEvent.py
+msgid "ILOIntranetTypes_label_attachment_attendees"
+msgstr ""
+
+#. Default: "Author(s)"
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_authors"
+msgstr ""
+
+#. Default: "Chronology of relevant past and prospective activities"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_chronology"
+msgstr ""
+
+#. Default: "City"
+#: Mission.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_city"
+msgstr ""
+
+#. Default: "List of Contacts"
+#: InternalCountryBrief.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_contacts"
+msgstr ""
+
+#. Default: "Type of contract"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_contract_type"
+msgstr ""
+
+#. Default: "Cooperation with the UN Family"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_cooperation"
+msgstr ""
+
+#. Default: "Relationship with other multilateral and bilateral organizations (Confidential)"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_cooperation_confidential"
+msgstr ""
+
+#. Default: "Relationship with other multilateral and bilateral organizations (Confidential)"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_cooperation_organizations"
+msgstr ""
+
+#. Default: "Country"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_country"
+msgstr ""
+
+#. Default: "Distribution List"
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_distribution"
+msgstr ""
+
+#. Default: "Mission Type"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_domestic"
+msgstr ""
+
+#. Default: "ECOSOC Membership"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_ecosoc_membership"
+msgstr ""
+
+#. Default: "Supporting Resource 1"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file1"
+msgstr ""
+
+#. Default: "Resource 10"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file10"
+msgstr ""
+
+#. Default: "Support Resource 2"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file2"
+msgstr ""
+
+#. Default: "Support Resource 3"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file3"
+msgstr ""
+
+#. Default: "Support Resource 4"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file4"
+msgstr ""
+
+#. Default: "Support Resource 5"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file5"
+msgstr ""
+
+#. Default: "Support Resource 6"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file6"
+msgstr ""
+
+#. Default: "Resource 7"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file7"
+msgstr ""
+
+#. Default: "Resource 8"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file8"
+msgstr ""
+
+#. Default: "Resource 9"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_file9"
+msgstr ""
+
+#. Default: "Follow-up actions/next steps"
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_followup"
+msgstr ""
+
+#. Default: "Further Resources"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_further_resources"
+msgstr ""
+
+#. Default: "Name"
+#: GCMember.py
+msgid "ILOIntranetTypes_label_gc_name"
+msgstr ""
+
+#. Default: "Type"
+#: GCMember.py
+msgid "ILOIntranetTypes_label_gc_type"
+msgstr ""
+
+#. Default: "Member"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_governing_body_membership"
+msgstr ""
+
+#. Default: "Attach CV if available"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_head_gov_cv"
+msgstr ""
+
+#. Default: "Date of next election"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_head_gov_election"
+msgstr ""
+
+#. Default: "Name of Head of Government"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_head_gov_name"
+msgstr ""
+
+#. Default: "Political Inclination"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_head_gov_politics"
+msgstr ""
+
+#. Default: "Head of Government's date of appointment"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_head_gov_start"
+msgstr ""
+
+#. Default: "Country Covered"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_iib_countries"
+msgstr ""
+
+#. Default: "The impact and strategic significance of the ILO in the country"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_impact"
+msgstr ""
+
+#. Default: "Top 10 contacts established / maintained during employment period"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_key_contacts"
+msgstr ""
+
+#. Default: "Key message(s) you want to share with your successor"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_key_message"
+msgstr ""
+
+#. Default: "Key resource mobilization opportunities in the pipeline"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_key_resources"
+msgstr ""
+
+#. Default: "Name of Labour Minister"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_labour_minister"
+msgstr ""
+
+#. Default: "Connecting with the Labour Minister"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_labour_minister_connection"
+msgstr ""
+
+#. Default: "Attach CV if available"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_labour_minister_cv"
+msgstr ""
+
+#. Default: "Last meeting with the Labour Minister"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_labour_minister_last_meeting"
+msgstr ""
+
+#. Default: "Labour Minister's Date of Appointment"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_labour_minister_start"
+msgstr ""
+
+#. Default: "Top 5 lessons learned during the employment period"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_lessons_learned"
+msgstr ""
+
+#. Default: "Mission Members"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_members"
+msgstr ""
+
+#. Default: "Mission_event_location"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_mission_event_location"
+msgstr ""
+
+#. Default: "Location"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_mission_location"
+msgstr ""
+
+#. Default: "Other Regions"
+#: Mission.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_mission_location_other"
+msgstr ""
+
+#. Default: "ILO Office"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_office"
+msgstr ""
+
+#. Default: "View of the Regional Office"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_office_view"
+msgstr ""
+
+#. Default: "Country / Regional Programme Outcome"
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_outcome"
+msgstr ""
+
+#. Default: "Contribution to Outcome"
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_outcome_text"
+msgstr ""
+
+#. Default: "Country / Regional Programme Outcome"
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_outome"
+msgstr ""
+
+#. Default: "Outstanding issues that need follow-up or action by your successor"
+#: StaffKnowledgeTransfer.py
+msgid "ILOIntranetTypes_label_outstanding_issues"
+msgstr ""
+
+#. Default: "Overall Situation"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_overall_situation"
+msgstr ""
+
+#. Default: "Overall Situation (analytical)"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_overall_situation_analytical"
+msgstr ""
+
+#. Default: "Attach CV if available"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_pm_cv"
+msgstr ""
+
+#. Default: "Date of Prime Minister's next election"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_pm_election"
+msgstr ""
+
+#. Default: "Name of Prime Minister"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_pm_name"
+msgstr ""
+
+#. Default: "Political Inclination"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_pm_politics"
+msgstr ""
+
+#. Default: "Prime Minister's Date of Appointment"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_pm_start"
+msgstr ""
+
+#. Default: "Attach CV if available"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_president_cv"
+msgstr ""
+
+#. Default: "Date of President's next election"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_president_election"
+msgstr ""
+
+#. Default: "Name of President"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_president_name"
+msgstr ""
+
+#. Default: "Political Inclination"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_president_politics"
+msgstr ""
+
+#. Default: "President's Date of Appointment"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_president_start"
+msgstr ""
+
+#. Default: "No. of RB GS Staff"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_rb_gs"
+msgstr ""
+
+#. Default: "No. of RB NO Staff"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_rb_no"
+msgstr ""
+
+#. Default: "No. of RB P Staff"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_rb_p"
+msgstr ""
+
+#. Default: "Socio Economic Contact"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_socio_economic_context"
+msgstr ""
+
+#. Default: "Sources for Country Information and Data"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_sources"
+msgstr ""
+
+#. Default: "No. of TC GS Staff"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_tc_gs"
+msgstr ""
+
+#. Default: "No. of TC NO Staff"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_tc_no"
+msgstr ""
+
+#. Default: "No. of TC P Staff"
+#: InternalCountryBrief.py
+msgid "ILOIntranetTypes_label_tc_p"
+msgstr ""
+
+#. Default: "Technical Unit"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_technical_unit"
+msgstr ""
+
+#. Default: "ILO Themes"
+#: ILOIntranetBase.py
+msgid "ILOIntranetTypes_label_theme"
+msgstr ""
+
+#. Default: "Theme (Other)"
+#: Mission.py
+#: MissionReport.py
+msgid "ILOIntranetTypes_label_theme_other"
+msgstr ""
+

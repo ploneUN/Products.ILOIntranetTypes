@@ -1,0 +1,369 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:main fill-slot="main">
+
+ 
+
+        <metal:header_macro define-macro="header"
+                            tal:define="kssClassesView context/@@kss_field_decorator_view;
+                       getKssClasses nocall:kssClassesView/getKssClassesInlineEditable">
+
+          <div tal:replace="structure provider:plone.abovecontenttitle" />
+          
+          <div tal:replace="structure provider:plone.belowcontenttitle" />
+        </metal:header_macro>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+
+        <metal:body_macro metal:define-macro="body"
+                          tal:define="field_macro field_macro | here/widgets/field/macros/view;
+                          pss modules/Products/PythonScripts/standard;
+                          is_editable context/@@plone_context_state/is_editable;
+                          DateTime python:modules['DateTime'].DateTime;">
+
+                          <div class="visualNoPrint cbnMenu">
+                              <ul tal:define="url python:context.absolute_url">
+                                  <li class="selected">Meta-Brief</li>
+                                 <li>
+                                  <a href="#"
+                                       tal:attributes="href string:${url}/cbn-profile">
+                                        Country Profile</a></li>
+                             </ul>
+                          </div>
+
+	  <div id="cbn">
+            <div id="header-ilo">
+                <h1>INTERNATIONAL LABOUR ORGANIZATION</h1>
+                <h3>Regional Office for Asia and the Pacific</h3>
+               <h1 class="documentFirstHeading">
+                <span tal:content="context/title"></span>:
+                Meta-Brief
+               </h1>
+             </div>
+
+
+                <h1>
+                  ECOSOC Membership 
+                </h1>
+                    <metal:field
+                    use-macro="python:here.widget('ecosoc_membership', mode='view')">
+            </metal:field>
+
+	    <h1>
+                Governing Body Membership
+  	    </h1>
+
+                 <tal:block tal:define="
+                 field python:context.getField('governing_body_membership');
+                 fsize python:field.getSize(here)+1;ssize python:field.getSize(here)-1">
+
+                 <p tal:condition="python: fsize == 1">
+                 N/A
+                 </p>
+
+                 <div tal:condition="python: fsize > 1">
+                  <div tal:repeat="f python:field.getFields()[1:fsize]">
+                        <span metal:use-macro="python:here.widget(f.getName(), field=f, mode='view')" />
+                  </div>
+                </div>
+              </tal:block>
+
+	      <h1>Local Staff</h1>
+
+                <table class="grid listing staff">
+                    <tr><th></th>
+                        <th>P</th>
+                        <th>NO</th>
+                        <th>GS</th>
+                        <th><b>Total</b></th>
+                    </tr>
+                    <tr class="palegoldenrod">
+                        <td> <b>RB</b></td>
+                        <td tal:content="context/rb_p | nothing">RP</td>
+                        <td tal:content="context/rb_no | nothing">RNO</td>
+                        <td tal:content="context/rb_gs | nothing">RGS</td>
+                        <td><b>
+                            <span tal:on-error="string: " 
+                                  tal:content="python: context.rb_p +
+                                    context.rb_no +
+                                    context.rb_gs"></span></b>
+                        </td>
+                    </tr>
+                    <tr class="lightgoldenrod">
+                        <td><b>TC</b></td>
+                        <td tal:content="context/tc_p | nothing ">TCRP</td>
+                        <td tal:content="context/tc_no | nothing">TCRNO</td>
+                        <td tal:content="context/tc_gs | nothing">TCRGS</td>
+                        <td><b><span tal:on-error="string: " tal:content="python: context.tc_p +
+                            context.tc_no +
+                            context.tc_gs">TCTotal</span></b></td>
+                    </tr>
+                </table>
+
+		<h1>Labour Minister</h1>
+
+                <dl>
+                        <dt>Name:</dt>
+                        <dd>
+                    <metal:block
+                    use-macro="python:here.widget('labour_minister',mode='view')">attach1</metal:block></dd>
+                </dl>
+                <dl>
+                    <dt>
+                    Date of Appointment:</dt>
+                    <dd><span tal:on-error="string: No date specified."
+                        tal:condition="context/labour_minister_start" tal:content="python: DateTime(context.labour_minister_start).strftime('%e %B %Y')">date</span>
+                    </dd>
+                </dl>
+                <div class="visualNoPrint">
+                <dl class="file">
+                    <dt>CV (download)</dt>
+                    <dd><metal:block
+                    use-macro="python:here.widget('labour_minister_cv',mode='view')">attach1</metal:block>
+                    </dd>
+                </dl>
+           	 </div>
+
+                   <h1>Connecting with the Labour Minister (confidential)</h1>
+                   <metal:block
+                  use-macro="python:here.widget('labour_minister_connection',mode='view')">attach1</metal:block>
+
+                  <h1>Last Meeting with the Labour Minister</h1>
+                    <p tal:condition="python: not
+                    context.labour_minister_last_meeting and is_editable"
+                    i18n:translate="no_body_text"
+                    class="discreet visualNoPrint">
+                    No input provided, click the edit tab to change it.
+                    </p>
+                  <p>
+                 <metal:block
+                  use-macro="python:here.widget('labour_minister_last_meeting',mode='view')">attach1</metal:block>
+                  </p>
+		  <h1>Head of Government</h1>
+                    <dl>
+                        <dt>Name:</dt>
+                        <dd>
+                    <metal:block
+                    use-macro="python:here.widget('head_gov_name',mode='view')">attach1</metal:block></dd>
+                </dl>
+                <dl>
+                    <dt>
+                    Date of appointment:</dt>
+                    <dd><span tal:on-error="string: No date specified."
+                        tal:condition="context/head_gov_start"
+                        tal:content="python: DateTime(context.head_gov_start).strftime('%e %B %Y')">date</span>
+                    </dd>
+                    </dl>
+                    <dl>
+                    <dt>
+                    Date of next election:</dt>
+                    <dd><span tal:on-error="string: No date specified."
+                        tal:condition="context/head_gov_election"
+                        tal:content="python: DateTime(context.head_gov_election).strftime('%e %B %Y')">date</span>
+                    </dl>
+                    <div class="visualNoPrint">
+                    <dl class="file">
+                    <dt>CV (download)</dt>
+                    <dd>
+                    <metal:block
+                    use-macro="python:here.widget('head_gov_cv',mode='view')">attach1</metal:block>
+                    </dd>
+                   </dl>
+               </div>
+                   <h1>Political inclination (confidential)</h1>
+                    <p tal:condition="python: not context.head_gov_politics and is_editable"
+                    i18n:translate="no_body_text"
+                    class="discreet visualNoPrint">
+                    No input provided, click the edit tab to change it.
+                    </p>
+                   <p>
+                   <metal:block
+                   use-macro="python:here.widget('head_gov_politics',mode='view')">attach1</metal:block>
+                  </p>
+		  <h1 tal:condition="python: not context.head_gov_name and is_editable">President</h1>
+       		<div tal:condition="python: not context.head_gov_name and is_editable">
+                    <dl>
+                        <dt>Name:</dt>
+                        <dd>
+                    <metal:block
+                    use-macro="python:here.widget('president_name',mode='view')">attach1</metal:block></dd>
+                </dl>
+                <dl>
+                    <dt>
+                    Date of Appointment:</dt>
+                    <dd><span tal:on-error="string: No date specified."
+                        tal:condition="context/president_start" tal:content="python: DateTime(context.president_start).strftime('%e %B %Y')">date</span>
+                    </dd>
+                    </dl>
+                    <dl>
+                    <dt>
+                    Date of Next Election:</dt>
+                    <dd><span tal:on-error="string: No date specified."
+                        tal:condition="context/president_election" tal:content="python: DateTime(context.president_election).strftime('%e %B %Y')">date</span>
+                    </dl>
+                    <div class="visualNoPrint">
+                    <dl class="file">
+                    <dt>CV (download)</dt>
+                    <dd>
+                    <metal:block
+                    use-macro="python:here.widget('president_cv',mode='view')">attach1</metal:block>
+                    </dd>
+                   </dl>
+               </div>
+                   <h1>Political Inclination</h1>
+                    <p tal:condition="python: not context.president_politics and is_editable"
+                    i18n:translate="no_body_text"
+                    class="discreet visualNoPrint">
+                    No input provided, click the edit tab to change it.
+                    </p>
+                   <p>
+                   <metal:block
+                  use-macro="python:here.widget('president_politics',mode='view')">attach1</metal:block>
+                  </p>
+	  </div>
+
+	  <h1 tal:condition="python: not context.head_gov_name and is_editable">Prime Minister</h1>
+       <div tal:condition="python: not context.head_gov_name and is_editable">
+	       
+	       <dl>
+                        <dt>Name:</dt>
+                        <dd>
+                    <metal:block
+                    use-macro="python:here.widget('pm_name',mode='view')">attach1</metal:block></dd>
+                </dl>
+                <dl>
+                    <dt>
+                    Date of Appointment:</dt>
+                    <dd><span tal:on-error="string: No date specified."
+                        tal:condition="context/pm_start" tal:content="python: DateTime(context.pm_start).strftime('%e %B %Y')">date</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                    Date of Next Election:</dt>
+                    <dd><span tal:on-error="string: No date specified."
+                        tal:condition="context/pm_election" tal:content="python: DateTime(context.pm_election).strftime('%e %B %Y')">date</span>
+                    </dd>
+                </dl>
+                <div class="visualNoPrint">
+                <dl class="file">
+                    <dt class="visualNoPrint">CV (download)</dt>
+                    <dd class="visualNoPrint"><metal:block
+                    use-macro="python:here.widget('pm_cv',mode='view')">attach1</metal:block>
+                    </dd>
+                   </dl>
+               </div>
+                   <h3>Political Inclination</h3>
+                    <p tal:condition="python: not
+                    context.pm_politics and is_editable"
+                    i18n:translate="no_body_text"
+                    class="discreet visualNoPrint">
+                    No input provided, click the edit tab to change it.
+                    </p>
+                   <p>
+                   <metal:block
+                  use-macro="python:here.widget('pm_politics',mode='view')">attach1</metal:block>
+                  </p>
+	  </div> 
+	  <h1>The impact and strategic significance of the ILO in the country</h1>
+	  
+	  <metal:block
+                use-macro="python:here.widget('impact',mode='view')">attach1</metal:block>
+		
+		<h1>Overall Situation - descriptive</h1>
+                <metal:block
+                use-macro="python:here.widget('overall_situation',mode='view')">attach1</metal:block>
+		
+		<h1>Overall Situation - analytical (confidential)</h1>
+		
+		<metal:block
+                use-macro="python:here.widget('overall_situation_analytical',mode='view')">attach1</metal:block>
+		
+		<h1>Cooperation with the UN Family (confidential)</h1>
+		
+		<metal:block
+                use-macro="python:here.widget('cooperation',mode='view')">attach1</metal:block>
+
+		<h1>Cooperation/relationship with other multilateral and bilateral organizations</h1>
+		
+		<metal:block
+                use-macro="python:here.widget('cooperation_organizations',mode='view')">attach1</metal:block>
+
+		<h1>Socio Economic Context</h1>
+		
+		<metal:block
+                use-macro="python:here.widget('socio_economic_context',mode='view')">attach1</metal:block>
+		
+		<h1>View of Regional Office (confidential)</h1>
+
+                    <p tal:condition="python: not context.office_view and is_editable"
+                    i18n:translate="no_body_text"
+                    class="discreet visualNoPrint ">
+                    No input provided, click the edit tab to change it.
+                    </p>
+                 <metal:block
+                use-macro="python:here.widget('office_view',mode='view')">attach1</metal:block>
+		
+		
+		<h1 align="left">Chronology of relevant past and prospective activities </h1>
+                    <p tal:condition="python: not context.chronology and is_editable"
+                    i18n:translate="no_body_text"
+                    class="discreet visualNoPrint ">
+                    No input provided, click the edit tab to change it.
+                    </p>
+                 <metal:block
+                use-macro="python:here.widget('chronology',mode='view')">attach1</metal:block>
+		
+		<h1>Further resources</h1>
+		
+                    <p tal:condition="python: not context.further_resources and is_editable"
+                    i18n:translate="no_body_text"
+                    class="discreet visualNoPrint ">
+                    No input provided, click the edit tab to change it.
+                    </p>
+                 <metal:block
+                 use-macro="python:here.widget('further_resources',mode='view')">attach1</metal:block>
+
+    </div>
+    <div class="visualNoPrint">
+
+         <div tal:on-error="string: " tal:condition="here/attachment1/size">
+        <h3>File attachments</h3>
+        </div>
+        <ul>
+            <li tal:on-error="string: " tal:condition="here/attachment1/size">
+            <metal:block use-macro="python:here.widget('attachment1',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/attachment2/size">
+            <metal:block use-macro="python:here.widget('attachment2',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/attachment3/size">
+            <metal:block use-macro="python:here.widget('attachment3',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/attachment4/size">
+            <metal:block use-macro="python:here.widget('attachment4',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/attachment5/size">
+            <metal:block use-macro="python:here.widget('attachment5',mode='view')">attach1</metal:block>
+            </li>
+       </ul>
+    </div> 
+
+  <br />
+
+      <div class="visualNoPrint">
+        <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+            show related items if they exist
+        </div>
+     </div>
+             
+        </metal:body_macro>
+        
+</metal:main>
+</body>
+</html>

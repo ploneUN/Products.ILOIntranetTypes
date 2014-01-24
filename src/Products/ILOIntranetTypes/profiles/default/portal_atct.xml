@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<atcttool>
+ <topic_indexes>
+  <!-- ##code-section indexes -->
+  <!-- ##/code-section indexes -->
+
+  <index name="getOutcome"
+     description="Enter outcome code here eg. IDN 101"
+     enabled="True" 
+     friendlyName="Country / Regional Programme Outcome">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+  </index>
+
+  <index name="mission_location"
+     description="Please select the country (or countries) for this mission. Hold down CTRL to select multiple countries."
+     enabled="True" 
+     friendlyName="Country Location">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+  </index>
+
+  <index name="theme"
+     description="Select the related themes. Hold CTRL to make multiple selections."
+     enabled="True" 
+     friendlyName="ILO Themes">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+  </index>
+
+  <index name="country"
+     description=""
+     enabled="True" 
+     friendlyName="Country">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+  </index>
+
+  <index name="mission_event_location"
+     description=""
+     enabled="True" 
+     friendlyName="Mission Event Location">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+  </index>
+
+  <index name="office"
+     description="Please select office you belong to. Hold down CTRL to select multiple offices."
+     enabled="True" 
+     friendlyName="ILO Office">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+   <criteria>ATSimpleStringCriterion</criteria>
+
+  </index>
+
+  <index name="iib_countries"
+     description="Countries covered by this report. Hold down CTRL to select multiple countries."
+     enabled="True" 
+     friendlyName="IIB Countries">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+  </index>
+
+  <index name="members"
+     description="List of Mission Members. One name per line with principal member first."
+     enabled="True" 
+     friendlyName="Mission Members">
+
+   <criteria>FormSelectionCriterion</criteria>
+
+   <criteria>FormSimpleStringCriterion</criteria>
+
+  </index>
+
+  <index name="domestic"
+     description="Please select whether this was a domestic or international mission"
+     enabled="True" 
+     friendlyName="Mission Type">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+  </index>
+
+  <index name="getAdministrative_unit"
+     description="Select Administrative Unit(s). Hold down CTRL to select multiple entries."
+     enabled="True" 
+     friendlyName="Administrative Unit">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+  </index>
+
+  <index name="getTechnical_unit"
+     description="Select Technical Unit(s). Hold down CTRL to select multiple entries."
+     enabled="True" 
+     friendlyName="Technical Unit">
+
+   <criteria>ATSelectionCriterion</criteria>
+
+  </index>
+
+ </topic_indexes>
+ <topic_metadata>
+  <!-- ##code-section metadata -->
+  <!-- ##/code-section metadata -->
+
+  <metadata name="getOutcome" 
+     description="Enter outcome code here eg. IDN 101"
+     enabled="True" 
+     friendlyName="Country / Regional Programme Outcome"/>
+
+  <metadata name="getMission_location" 
+     description="Please select the country (or countries) for this mission. Hold down CTRL to select multiple countries."
+     enabled="True" 
+     friendlyName="Country Location"/>
+
+  <metadata name="getTheme" 
+     description="Select the related themes. Hold CTRL to make multiple selections."
+     enabled="True" 
+     friendlyName="ILO Themes"/>
+
+  <metadata name="getCountry" 
+     description=""
+     enabled="True" 
+     friendlyName="Country"/>
+
+  <metadata name="getMission_event_location" 
+     description=""
+     enabled="True" 
+     friendlyName="Mission Event Location"/>
+
+  <metadata name="getOffice" 
+     description="Please select office you belong to. Hold down CTRL to select multiple offices."
+     enabled="True" 
+     friendlyName="ILO Office"/>
+
+  <metadata name="getIib_countries" 
+     description="Countries covered by this report. Hold down CTRL to select multiple countries."
+     enabled="True" 
+     friendlyName="IIB Countries"/>
+
+  <metadata name="getDomestic" 
+     description="Please select whether this was a domestic or international mission"
+     enabled="True" 
+     friendlyName="Mission Type"/>
+
+  <metadata name="getAdministrative_unit" 
+     description="Select Administrative Unit(s). Hold down CTRL to select multiple entries."
+     enabled="True" 
+     friendlyName="Administrative Unit"/>
+
+  <metadata name="getTechnical_unit" 
+     description="Select Technical Unit(s). Hold down CTRL to select multiple entries."
+     enabled="True" 
+     friendlyName="Technical Unit"/>
+
+ </topic_metadata>
+</atcttool>

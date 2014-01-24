@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master">
+<head>
+</head>
+<body>
+    <div metal:fill-slot="content">
+            <form tal:attributes="action request/getURL" method="GET">
+                Month  
+                <select name="month">
+                  <option tal:repeat="m view/months" 
+                           tal:attributes="value m/value;
+                                           selected m/selected"
+                           tal:content="m/name"></option>
+                </select>
+                Theme 
+                <select name="theme">
+                  <option tal:repeat="m view/themes" 
+                           tal:attributes="value m/value;
+                                           selected m/selected"
+                           tal:content="m/name"></option>
+                </select>
+                Office
+                <select name="office">
+                  <option tal:repeat="m view/offices" 
+                           tal:attributes="value m/value;
+                                           selected m/selected"
+                           tal:content="m/name"></option>
+                </select>
+               <input type="submit" value="Update"/>
+            </form>
+
+        <iframe tal:attributes="src view/map_embed_url"
+            style="width:100%;height:600px"></iframe>        
+  </div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+      
+<body>
+
+    <metal:main fill-slot="main">
+
+     
+
+        <metal:header_macro define-macro="header"
+            tal:define="kssClassesView context/@@kss_field_decorator_view;
+                               getKssClasses nocall:kssClassesView/getKssClassesInlineEditable">
+
+            <div tal:replace="structure provider:plone.abovecontenttitle" />
+            <div tal:replace="structure provider:plone.belowcontenttitle" />
+        </metal:header_macro>
+
+        <metal:body_macro metal:define-macro="body"
+                          tal:define="field_macro field_macro | here/widgets/field/macros/view;
+                          pss modules/Products/PythonScripts/standard;">
+    
+           <div tal:define="state python:here.portal_workflow.getInfoFor(here,'review_state')">
+                <dl class="portalMessage info" tal:condition="python:state == 'private'">
+                     <dt>Draft</dt>
+                     <dd>This form is in currently saved as a private draft. If
+                        you wish to submit and share this form to colleagues,
+                        please click on <b>State: Private</b> and select
+                        <b>Submit</b>. 
+                    </dd>
+                </dl>
+           </div>
+   
+           <table class="grid listing" id="mission-report">
+            <tbody>
+            <tr>
+                <th id="mission-report-title">
+                    INTERNATIONAL LABOUR ORGANIZATION<br />
+                    Regional Office for Asia and the Pacific<br />
+                    Staff Knowledge Transfer Form
+                    <br /><br />
+                    <metal:field use-macro="python:here.widget('title', mode='view')">
+                    Title
+                    </metal:field>
+                </th>
+            </tr>
+            <tr>
+                <th id="mission-report-author">
+                ILO Office of last assignment
+                </th>
+            </tr>
+             <tr>
+                 <td>
+                                              <metal:block
+                    use-macro="python:here.widget('office',mode='view')">attach1</metal:block>
+                    </td>
+            </tr>
+            <tr>
+                <th id="mission-report-members">
+                   Assignment Period
+                </th>
+            </tr>
+            <tr>
+                <td class="even">
+                    Start Date:  
+                </td>
+            </tr>
+            <tr>
+                <td><span tal:content="python: DateTime(context.startDate).strftime('%e %B %Y')">date</span> </td>
+            </tr>
+            <tr>
+                <td class="even">
+                    End Date:  
+                </td>
+            </tr>
+            <tr>
+                <td><span tal:content="python: DateTime(context.endDate).strftime('%e %B %Y')">date</span> </td>
+            </tr>
+            <tr>
+                <th id="mission-report-type">
+                Key area of work covered during the assignment period
+               </th>
+            </tr>
+            <tr>
+                <td>
+                    <metal:block
+                    use-macro="python:here.widget('theme',mode='view')">attach1</metal:block>
+                </td>
+            </tr>
+            <tr>
+                <th id="mission-report-city">
+                Type of Contract
+               </th>
+            </tr>
+            <tr>
+                <td>
+                    <metal:block
+                    use-macro="python:here.widget('contract_type',mode='view')">attach1</metal:block>
+                </td>
+            </tr>
+            <tr>
+                <th id="mission-report-location">
+                    Key Contacts
+               </th>
+            </tr>
+            <tr>
+                <td>
+                    <metal:block
+                    use-macro="python:here.widget('key_contacts',mode='view')">attach1</metal:block>
+                </td>
+            </tr>
+            <tr>
+                <th id="mission-report-themes">Key resource mobilization
+                    opportunities being pursued
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <metal:block
+                    use-macro="python:here.widget('key_resources',mode='view')">attach1</metal:block>
+                </td>
+            </tr>
+            <tr>
+                <th id="mission-report-achievements">Pending issues that
+                    need follow-up or action by your successor
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                    <metal:block
+                    use-macro="python:here.widget('outstanding_issues',mode='view')">attach1</metal:block>
+                    </p>
+                </td>
+             </tr>
+            <tr>
+                <th id="mission-report-findings">
+                   Top 5 lessons learned during the assignment period 
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <metal:block
+                    use-macro="python:here.widget('lessons_learned',mode='view')">attach1</metal:block>
+                </td>
+            </tr>
+            <tr>
+                <th id="mission-report-actions">Top 5 things you would advice your successor to do
+                </th>
+            </tr>
+            <tr>
+                  <td>
+                      <p>
+                         <metal:block
+                            use-macro="python:here.widget('advice',mode='view')">attach1</metal:block>
+
+                      </p>
+                  </td>
+          </tr>
+          <tr>
+              <th id="mission-report-contacts">Top 5 things you would advice your successor not to do</th>
+          </tr>
+          <tr>
+              <td>
+                 <metal:block
+                use-macro="python:here.widget('advice_not',mode='view')">attach1</metal:block>
+            </td>
+            </tr>
+      </tbody>
+      </table>
+
+    <div class="visualNoPrint">
+
+        <h3>Top Resources</h3>
+
+        <ul>
+            <li tal:on-error="string: " tal:condition="here/file1/size">
+            <metal:block use-macro="python:here.widget('file1',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/file2/size">
+            <metal:block use-macro="python:here.widget('file2',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/file3/size">
+            <metal:block use-macro="python:here.widget('file3',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/file4/size">
+            <metal:block use-macro="python:here.widget('file4',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/file5/size">
+            <metal:block use-macro="python:here.widget('file5',mode='view')">attach1</metal:block>
+            </li>
+           <li tal:on-error="string: " tal:condition="here/file6/size">
+            <metal:block use-macro="python:here.widget('file6',mode='view')">attach1</metal:block>
+            </li>
+           <li tal:on-error="string: " tal:condition="here/file7/size">
+            <metal:block use-macro="python:here.widget('file7',mode='view')">attach1</metal:block>
+            </li>
+           <li tal:on-error="string: " tal:condition="here/file8/size">
+            <metal:block use-macro="python:here.widget('file8',mode='view')">attach1</metal:block>
+            </li>
+           <li tal:on-error="string: " tal:condition="here/file9/size">
+            <metal:block use-macro="python:here.widget('file9',mode='view')">attach1</metal:block>
+            </li>
+           <li tal:on-error="string: " tal:condition="here/file10/size">
+            <metal:block use-macro="python:here.widget('file10',mode='view')">attach1</metal:block>
+            </li>
+       </ul>
+    </div> 
+
+   </metal:body_macro>
+        
+</metal:main>
+</body>
+</html>

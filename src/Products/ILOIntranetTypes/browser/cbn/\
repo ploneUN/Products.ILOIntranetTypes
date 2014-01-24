@@ -1,0 +1,166 @@
+table.listing#cbn {
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}
+
+
+table.listing#cbn th#cbn-title {
+    background: none;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}
+
+table.listing#cbn th#cbn-title div#header-ilo {
+    text-align: center;
+    font-weight:bold;
+    font-size: 100%;
+}
+
+table.listing#cbn th#cbn-title div#header-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight:bold;
+    font-size: 125%;
+    padding-bottom: 1em;
+}
+
+table.listing#cbn th {
+    font-size: 125%;
+    text-align: left;
+    font-weight: bold;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}   
+
+table.listing#cbn td {
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}   
+
+table.listing#cbn dt {
+    font-size: 120%;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: underline;
+    display: inline;
+    margin-right: 0.5em;
+}
+
+table.listing#cbn dd {
+    font-size: 120%;
+    display: inline;
+    margin: 0;
+}
+
+ 
+table#cbn.grid tbody tr td dl.file  {
+ font-style: normal;
+ font-weight: none;
+ text-decoration:none;
+ font-size: 90%;
+}
+
+table#cbn.grid tbody tr td dl.file dt  {
+ text-decoration:none;
+ font-style: normal;
+ font-weight: bold;
+}
+
+table.listing#cbn h3 {
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: underline;
+}   
+
+
+table#cbn.grid tbody tr td#governing-body div div {
+margin: 0.5em 0;
+}
+table#cbn.grid tbody tr td#governing-body {
+padding: 0 0.5em;
+margin: 0;
+}
+
+td#governing-body table.listing  {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+td#governing-body th  {
+    border: none;
+    background: none;
+    font-size: 120%;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: underline;
+    vertical-align: top;
+    padding: 0;
+}
+
+td#governing-body td  {
+    font-size: 120%;
+}
+
+table#cbn table.grid.listing.staff th{
+border: 1px solid black;
+}
+
+table#cbn table.grid.listing.staff td{
+    align: center;
+    border: 1px solid black;
+}
+
+div.visualNoPrint.cbnMenu  {
+    width: 95%;
+    margin-right:i auto;
+    margin-left: auto;
+}
+
+div.visualNoPrint.cbnMenu ul {
+    list-style-type: none;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    display: inline-block;
+}
+
+div.visualNoPrint.cbnMenu li.selected
+ {
+    background: #87B829;
+}
+
+
+div.visualNoPrint.cbnMenu li
+ {
+    display: inline-block; 
+    padding: 5px 10px 5px 10px;
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: none;
+    background: #205C90;
+}
+
+div.visualNoPrint.cbnMenu a  {
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+div#kupu-editor-fieldname iframe.kupu-editor-iframe {
+  height: 200px;
+  width: 99%;
+}

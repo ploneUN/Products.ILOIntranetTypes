@@ -1,0 +1,114 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:main fill-slot="main">
+        <!-- header, H1 with title in it -->
+<!--        <metal:header define-macro="header">
+            <metal:field use-macro="python:here.widget('title', mode='view')">
+            Title
+            </metal:field>
+        </metal:header> -->
+        
+        <!-- body macro where all the fields are -->
+        <metal:body define-macro="body">
+
+        <h3>Mission Members</h3>
+             <span class="label">Office: </span><metal:block
+            use-macro="python:here.widget('office',mode='view')">attach1</metal:block>
+
+ 
+            <ul>
+           <li tal:repeat="items context/members"
+                tal:content="items">
+            </li>
+        </ul>
+              <h3>Mission Details</h3>
+              <dl>
+                  <dt>Type</dt>
+                  <dd tal:content="context/domestic | nothing"></dd>
+              </dl>
+        <ul>
+                <li><span class="label">Start: </span><metal:block
+            use-macro="python:here.widget('startDate',mode='view')">attach1</metal:block></li>
+            <li><span class="label">End: </span><metal:block
+            use-macro="python:here.widget('endDate',mode='view')">attach1</metal:block></li>
+            <li><span class="label">Location: </span> 
+            <span tal:condition="here/city | nothing"
+                tal:content="here/city">City</span><span
+                tal:condition="here/city | nothing">, </span><span
+                tal:content="here/mission_event_location |
+                nothing">Country</span> 
+                   <span tal:on-error="string: "
+                       tal:condition="here/mission_location_other | nothing">
+                        (<span
+                           tal:content="here/mission_location_other |
+                           nothing"></span>)
+                   </span>
+
+            </li> 
+            <li tal:condition="here/theme| nothing"><span class="label">Theme(s):</span>
+                   <metal:block
+                   use-macro="python:here.widget('theme',mode='view')">attach1</metal:block>
+                   <span tal:on-error="string: "
+                       tal:condition="here/theme_other| nothing">
+                        (<span
+                           tal:content="here/theme_other |
+                           nothing"></span>)
+                   </span>
+                   </li>
+            <li tal:condition="here/contactName|nothing">
+                <span class="label">Contact Person: </span>
+                <metal:block
+                use-macro="python:here.widget('contactName',mode='view')"/>
+                </li>
+            <li tal:condition="here/contactEmail|nothing">
+                <span class="label">Contact Person Email: </span>
+                <metal:block
+                use-macro="python:here.widget('contactEmail',mode='view')"/>
+                </li>
+            <li tal:condition="here/contactPhone|nothing">
+                <span class="label">Contact Person Phone: </span>
+                <metal:block
+                use-macro="python:here.widget('contactPhone',mode='view')"/>
+            </li>
+             </ul>
+
+        <h3>Notes</h3>
+        <metal:block use-macro="python:here.widget('text',mode='view')">attach1</metal:block>
+      
+        <tal:block define="isSFLight isSFLight|nothing"> 
+        <dl class="portalMessage info"
+            tal:condition="not:isSFLight">
+            <dt>New Mission Report</dt>
+            <dd>
+                If you wish to create a new mission report, with values
+                from this mission event, click the following link:
+                <b>
+                <a
+                tal:attributes="href
+                string:$portal_url/reports/mission-reports/reports/createObject?type_name=MissionReport">Create
+                New Mission Report</a></b></dd>
+        </dl>
+         <dl class="portalMessage info"
+            tal:condition="isSFLight">
+            <dt>New Mission Report</dt>
+            <dd>
+                If you wish to create a new mission report, access the detailed
+                view by clicking the following link:
+                <b>
+                <a
+                tal:attributes="href context/absolute_url">Access detailed view</a></b></dd>
+        </dl>
+         </tal:block>   
+         <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+            show related items if they exist
+        </div>
+             
+        </metal:body>
+        
+</metal:main>
+</body>
+</html>

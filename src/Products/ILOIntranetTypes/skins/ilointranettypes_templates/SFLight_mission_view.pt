@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      tal:define="portal_state context/@@plone_portal_state;
+                  context_state context/@@plone_context_state;
+                  lang portal_state/language;
+                  portal_url portal_state/portal_url;
+                  checkPermission nocall: context/portal_membership/checkPermission;
+                  site_properties context/portal_properties/site_properties;
+                  ajax_load request/ajax_load | nothing;
+                  wtool context/portal_workflow;
+                  event_macro context/mission_view/macros/body;
+                  isViewTemplate python:context_state.is_view_template;
+                  isSFLight python:True"
+      i18n:domain="plone"
+      tal:omit-tag="">
+ <div id="content" class="documentContent">
+
+   <metal:event_view
+     use-macro="event_macro" />
+
+  </div>
+</html>

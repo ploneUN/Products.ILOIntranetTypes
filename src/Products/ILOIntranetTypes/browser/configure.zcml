@@ -1,0 +1,76 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="ILOIntranetTypes">
+
+    <browser:resourceDirectory
+           name="Products.ILOIntranetTypes"
+           directory="resources"
+           />
+
+	<browser:page
+	      for="*"
+	      name="distributionlist"
+	      permission="zope2.View"
+	      class=".browser.jsonvocabs.MultiSelectWithAutoComplete"/>
+
+	<browser:page
+	      for="*"
+	      name="cbn-default"
+          permission="ilo.intranettypes.ViewCBNPrivateData"
+          template="cbn/cbn-default-view.pt"
+	      class=".browser.cbn.CBNView"/>
+
+	<browser:page
+	      for="*"
+	      name="cbn-profile"
+	      permission="zope2.View"
+          template="cbn/cbn-profile-view.pt"
+	      class=".browser.cbn.CBNView"/>
+
+	<browser:page
+	      for="Products.ILOIntranetTypes.interfaces.IInternalCountryBrief"
+	      name="view"
+	      permission="zope2.View"
+          template="cbn/cbn-profile-view.pt"
+	      class=".browser.cbn.CBNView"/>
+
+	
+	<browser:page
+	      for="*"
+	      name="cbn-css"
+	      permission="zope2.View"
+          template="cbn/cbn.css"
+	      class=".browser.cbn.CBNView"/>
+
+
+    <browser:page
+        for="Products.PloneBooking.content.Booking.Booking"
+        name="update_booking"
+        class=".browser.updatebooking.UpdateBooking"
+        permission="cmf.ModifyPortalContent"
+        attribute="render"/>
+
+
+    <browser:page
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        name="migratemissionreport"
+        class=".browser.migrate.Migrate"
+        permission="cmf.ManagePortal"
+        attribute="render"/>
+
+
+<!-- Placeholder browser pages for Mission Members and Authors
+
+	<browser:page
+	      for="*"
+	      name="missionmembers"
+	      permission="zope2.View"
+	      class=".browser.jsonvocabs.MissionMembers"/>
+
+
+
+-->
+
+</configure>

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master">
+      <head>
+         <metal:block fill-slot="style_slot">
+         <style>
+            .mt-locationrow {
+               background: #ccc;
+               border-bottom: solid 2px #000;
+            }
+
+            .mt-personrow {
+               border-bottom: solid 1px #000;
+            }
+
+            .mt-personrow.even {
+               background: #eee;
+            }
+
+            .mt-markday {
+               text-align:center;
+               vertical-align:middle;
+               background:#aaa;
+            }
+
+            .mt-table td {
+               border-left: solid 1px #000;
+            }
+
+            td.mt-name-cell {
+                max-width:700px;
+                min-width:400px;
+            }
+         </style>
+         <style media="print">
+            .mt-table form input[type='submit'] {
+               display:none;
+            }
+         </style>
+         </metal:block>
+</head>
+<body>
+    <div metal:fill-slot="content-core">
+        <div style="text-align:right">
+       <form tal:attributes="action string:${context/absolute_url}/mission_travel_view_print" 
+            method="GET">
+            <input type="hidden" name="month" tal:attributes="value view/month"/>
+               <input type="submit" value="Download as PDF"/>
+            </form>
+        </div>
+      <table width="100%" class="mt-table">
+         <tr>
+         <thead>
+            <th>
+            <form tal:attributes="action request/getURL" method="GET">
+               <select name="month">
+                  <option tal:repeat="m view/months" 
+                           tal:attributes="value m/value;
+                                           selected m/selected"
+                           tal:content="m/name"></option>
+               </select>
+               <input type="submit" value="Update"/>
+            </form>
+            </th>
+            <th style="width:18px;text-align:center" tal:repeat="day view/days"><b tal:content="day"></b></th>
+         </thead>
+         </tr>
+         <tal:r repeat="location view/locations">
+         <tr class="mt-locationrow">
+            <td><b tal:content="location/name"></b></td>
+            <td tal:repeat="day view/days"></td>
+         </tr>
+         <tal:r repeat="person location/people">
+         <tr class="mt-personrow" tal:define="isEven repeat/person/even"
+            tal:attributes="class python: 'mt-personrow even' if isEven else 'mt-personrow odd'">
+            <td class="mt-name-cell" tal:content="person/name"></td> 
+            <tal:r repeat="day view/days">
+            <td class="mt-markday" tal:condition="python:day in dict(person['days']).keys()">
+                <a tal:attributes="title python:dict(person['days'])[day].title;
+                    href python: dict(person['days'])[day].absolute_url()">X</a>
+            </td>
+            <td tal:condition="python:not (day in dict(person['days']).keys())">
+            </td>
+            </tal:r>
+         </tr>
+         </tal:r>
+         </tal:r>
+      </table>
+  </div>
+</body>
+</html>

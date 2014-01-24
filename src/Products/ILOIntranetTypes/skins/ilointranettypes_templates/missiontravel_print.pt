@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      tal:define="view nocall:options/view">
+      <head>
+          <style>
+
+            .mt-locationrow {
+                background: #ccc;
+                border-top:solid 2px #000;
+                border-bottom: solid 2px #000;
+                border-right:solid 1px #000;
+            }
+
+            .mt-personrow {
+                border-bottom: solid 1px #000;
+                border-right: solid 1px #000;
+            }
+
+            .mt-personrow.even {
+               background: #eee;
+            }
+
+            .mt-markday {
+               text-align:center;
+               vertical-align:middle;
+               background:#aaa;
+            }
+
+            .mt-table td {
+                padding-top:3px;
+                padding-left:1px;
+                padding-right:1px;
+               border-left: solid 1px #000;
+           }
+
+           .mt-table th {
+               padding-left:1px;
+               padding-right:1px;
+           }
+
+            td.mt-name-cell {
+                white-space: nowrap;
+            }
+         </style>
+         <style media="print">
+            .mt-table form input[type='submit'] {
+               display:none;
+            }
+         </style>
+</head>
+<body>
+   <div>
+      <h1 tal:content="context/Title"></h1>
+      <table width="100%" class="mt-table">
+         <tr>
+         <thead>
+            <th tal:content="view/monthText">
+            </th>
+            <th style="width:20px;font-size:6px;text-align:center" tal:repeat="day view/days"><b tal:content="day"></b></th>
+         </thead>
+         </tr>
+         <tal:r repeat="location view/locations">
+         <tr class="mt-locationrow">
+            <td><b tal:content="location/name"></b></td>
+            <td tal:repeat="day view/days"></td>
+         </tr>
+         <tal:r repeat="person location/people">
+         <tr class="mt-personrow" tal:define="isEven repeat/person/even"
+            tal:attributes="class python: 'mt-personrow even' if isEven else 'mt-personrow odd'">
+            <td class="mt-name-cell" tal:content="person/name"></td> 
+            <tal:r repeat="day view/days">
+            <td class="mt-markday" tal:condition="python:day in person['days']">
+               X
+            </td>
+            <td tal:condition="python:not (day in person['days'])">
+            </td>
+            </tal:r>
+         </tr>
+         </tal:r>
+         </tal:r>
+      </table>
+  </div>
+</body>
+</html>

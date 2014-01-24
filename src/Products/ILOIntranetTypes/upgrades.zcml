@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+    <genericsetup:registerProfile
+        name="to4100"
+        directory="profiles/to4100"
+        title="Products.ILOIntranetTypes:to4100"
+        description=''
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:upgradeStep
+        title="Products.ILOIntranetTypes:to4100"
+        description=""
+        source="*"
+        destination="4100"
+        handler=".upgrades.to4100"
+        profile="Products.ILOIntranetTypes:default"
+        sortkey="1"/>
+
+</configure>
+

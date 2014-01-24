@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      tal:define="view nocall:options/view">
+      <head>
+          <style>
+            a, a:link, a:visited {
+                color:#000;
+            }
+            table.mt-table {
+                border: 1px solid #ccc;
+            }
+            .mt-locationrow {
+               background: #ccc;
+               border-bottom: solid 2px #000;
+            }
+
+            .mt-personrow {
+               border-bottom: solid 1px #000;
+            }
+
+            .mt-personrow.even {
+               background: #eee;
+            }
+
+            .mt-markday {
+               text-align:center;
+               vertical-align:middle;
+               background:#aaa;
+            }
+
+            .mt-table th {
+                border: 1px solid #333;
+                background: #ccc;
+                padding: 0.5em;
+            }
+
+            .mt-table td {
+                border: 1px solid #333;
+                padding: 0.5em;
+            }
+
+            td.mt-name-cell {
+                white-space: nowrap;
+            }
+         </style>
+         <style media="print">
+            .mt-table form input[type='submit'] {
+               display:none;
+             }
+             #xmpp-viewlet,
+             div form,
+             div#plone-document-byline
+             { display: None; }
+         </style>
+</head>
+<body>
+   <div>
+     <h1 tal:content="context/Title"></h1>
+     <h2 tal:content="view/monthText"></h2>
+     <h3 tal:condition="view/events">Events</h3>
+     <table tal:condition="view/events" width="100%" class="mt-table">
+         <tr>
+             <th>Date</th>
+             <th>Activity / Purpose</th>
+             <th>Place</th>
+             <th>Contact Person</th>
+         </tr>
+         <tr tal:repeat="event view/events">
+             <tal:block define="event_obj event/getObject">
+             <td><span tal:content='python:event.start.strftime("%d %b")'></span>&nbsp;-&nbsp;<span tal:content='python:event.end.strftime("%d %b")'></span></td>
+             <td><a tal:attributes="href event_obj/absolute_url"><span tal:content="event/Title"></span></a>
+             <td><span tal:content="event/location | nothing"></span>
+             <td>
+                 <span tal:content="event_obj/contactName"></span>
+             </td>
+             </tal:block>
+        </tr>
+
+     </table>
+
+     <h3 tal:condition="view/missions">Missions</h3>
+     <table tal:condition="view/missions" width="100%" class="mt-table">
+         <tr>
+             <th>Date</th>
+             <th>Purpose</th>
+             <th>Office</th>
+             <th>Location</th>
+             <th>Contact Person</th>
+         </tr>
+         <tr tal:repeat="mission view/missions">
+             <tal:block define="mission_obj mission/getObject">
+             <td><span tal:content='python:mission.start.strftime("%d %b")'></span>&nbsp;-&nbsp;<span tal:content='python:mission.end.strftime("%d %b")'></span></td>
+             <td><a tal:attributes="href mission_obj/absolute_url"><span tal:content="mission/Title"></span></a>
+                 <td><span tal:repeat="offices mission/office">
+                         <span tal:replace="offices"></span>
+                         <span tal:replace="string: ," tal:condition="not: repeat/offices/end">,</span>
+                     </span>
+             </td>
+             <td><span tal:content="mission/mission_event_location | nothing"></span>
+             <td>
+                 <span tal:content="mission_obj/contactName"></span>
+             </td>
+             </tal:block>
+        </tr>
+
+     </table>
+
+  </div>
+</body>
+</html>

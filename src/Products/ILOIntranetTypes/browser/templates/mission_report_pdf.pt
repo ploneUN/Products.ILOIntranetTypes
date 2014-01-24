@@ -1,0 +1,204 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      i18n:domain="plone">
+    <head>
+         <style>
+             div.mission-report-title h1 { text-align: center;
+                                           font-size: 24px;}
+             div.mission-report-title h2 { text-align: center; 
+                                           text-decoration: none;}
+             div.mission-report-title h3 { text-align: center; }
+
+             div.mission-report-title { padding-bottom: 2em; }
+
+             h2 { font-size: 20px ; line-height: 1.5em;}
+             h3 { font-size: 18px; }
+         </style>
+         <style media="print">
+             #xmpp-viewlet,
+             div#plone-document-byline
+             { display: None; }
+
+             ul { list-style-type: disc;
+                 margin-left: 2em; 
+                 line-height: 1.5em;}
+
+         </style>
+     </head> 
+<body>
+
+
+        <metal:content-core define-macro="content-core">
+
+           <div tal:define="state python:here.portal_workflow.getInfoFor(here,'review_state')">
+                <dl class="portalMessage info" tal:condition="python:state == 'private'">
+                     <dt>Draft</dt>
+                     <dd>This report is in currently saved as a private draft. If
+                        you wish to submit and send this report to colleagues,
+                        please click on <b>State: Private</b> and select <b>Submit
+                        Report</b>. 
+                    </dd>
+                </dl>
+           </div>
+
+
+            <div class="mission-report-title">
+                <h1>
+                    INTERNATIONAL LABOUR ORGANIZATION
+                </h1>
+                <h2>
+                    <metal:field use-macro="python:here.widget('office',
+                    mode='view')"></metal:field> - Mission Report
+                </h2>
+                <h3>
+                    <metal:field use-macro="python:here.widget('title', mode='view')">
+                    Title
+                    </metal:field>
+                </h3>
+            </div>
+
+            <h2>Author(s)</h2>
+            <p>
+              <span tal:repeat="author here/authors">
+                <span tal:content="author"></span><tal:separator
+                condition="not: repeat/author/end">,</tal:separator>
+            </span>
+            </p>
+  
+            <h2>Mission Members(s)</h2>
+            <p>
+              <span tal:repeat="member here/members">
+                <span tal:content="member"></span><tal:separator
+                condition="not: repeat/member/end">,</tal:separator>
+            </span>
+            </p>
+
+           <h2>Overall Objective</h2>
+           <p tal:content="context/Description"></p>
+
+           <h2>Country / Regional Programme Outcome</h2>
+           <dl>
+           <dt tal:content="context/outcome"></dt>
+           <dd>
+                    <metal:block
+                    use-macro="python:here.widget('outcome_text',mode='view')">attach1</metal:block>
+            </dd>
+        </dl>
+
+
+            <h2>ILO Office</h2>
+            <p>
+              <span tal:repeat="office here/office">
+                <span tal:content="office"></span><tal:separator
+                condition="not: repeat/office/end">,</tal:separator>
+            </span>
+            </p>
+
+            <h2>Period Covered</h2>
+            <ul>
+                <li>Start Date:
+                    <metal:block
+                    use-macro="python:here.widget('startDate',mode='view')">attach1</metal:block>
+                    </li>
+                    <li>
+               End Date:
+                 <metal:block
+                    use-macro="python:here.widget('endDate',mode='view')">attach1</metal:block>
+                    </li>
+            </ul>
+
+            <h2>Mission Type</h2>
+            <p tal:content="context/domestic"></p>
+
+            <h3>City</h3>
+            <p tal:content="context/city"></p>
+
+            <h3>Mission Location(s)</h3>
+            <p>
+              <span tal:repeat="location here/mission_location">
+                <span tal:content="location"></span><tal:separator
+                condition="not: repeat/location/end">,</tal:separator>
+            </span>
+            <span tal:condition="context/mission_location_other">:</span>
+            <span tal:condition="context/mission_location_other" tal:content="context/mission_location_other"></span>
+
+            </p>
+
+            <h2>Theme(s)</h2>
+            <p>
+            <span tal:repeat="theme context/theme">
+                <span tal:content="theme"></span><tal:separator
+                condition="not: repeat/theme/end">,</tal:separator>
+            </span>
+            </p>
+            <p>
+            <span tal:condition="context/theme_other">Other:</span>
+            <span tal:condition="context/theme_other" tal:content="context/theme_other"></span>
+            </p>
+
+            <h2>Summary of Main Achievements</h2>
+            <p>
+                    <metal:block
+                    use-macro="python:here.widget('SummaryAchievements',mode='view')">attach1</metal:block>
+            </p>
+
+            <h2>Mission Findings</h2>
+           
+            <p>
+                    <metal:block
+                    use-macro="python:here.widget('MissionFindings',mode='view')">attach1</metal:block>
+            </p>
+
+            <h2>Follow-up actions/next steps</h2>
+            <p>
+                 <metal:block
+                    use-macro="python:here.widget('followup',mode='view')">attach1</metal:block>
+
+            </p>
+
+            <h2>List of Contacts</h2>
+
+            <p>
+                 <metal:block
+                    use-macro="python:here.widget('contacts',mode='view')">attach1</metal:block>
+
+            </p>
+            <h2>Distribution List</h2>
+            <p>
+
+                  <span tal:repeat="link here/distribution">
+                    <span tal:content="link"></span><tal:separator
+                    condition="not: repeat/link/end">,</tal:separator>
+                </span>
+            </p>
+
+    <div class="visualNoPrint">
+
+         <div tal:on-error="string: " tal:condition="here/attachment1/size">
+        <h3>File attachments</h3>
+        </div>
+        <ul>
+            <li tal:on-error="string: " tal:condition="here/attachment1/size">
+            <metal:block use-macro="python:here.widget('attachment1',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/attachment2/size">
+            <metal:block use-macro="python:here.widget('attachment2',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/attachment3/size">
+            <metal:block use-macro="python:here.widget('attachment3',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/attachment4/size">
+            <metal:block use-macro="python:here.widget('attachment4',mode='view')">attach1</metal:block>
+            </li>
+            <li tal:on-error="string: " tal:condition="here/attachment5/size">
+            <metal:block use-macro="python:here.widget('attachment5',mode='view')">attach1</metal:block>
+            </li>
+       </ul>
+    </div> 
+
+
+
+    </metal:content-core>
+
+</body>
+</html>

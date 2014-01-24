@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master">
+      <head>
+         <metal:block fill-slot="style_slot">
+         <style>
+
+             table.mt-table {
+                border: 1px solid #ccc;
+            }
+            .mt-locationrow {
+               background: #ccc;
+               border-bottom: solid 2px #000;
+            }
+
+            .mt-personrow {
+               border-bottom: solid 1px #000;
+            }
+
+            .mt-personrow.even {
+               background: #eee;
+            }
+
+            .mt-markday {
+               text-align:center;
+               vertical-align:middle;
+               background:#aaa;
+            }
+
+            .mt-table th {
+                border: 1px solid #333;
+                background: #ccc;
+                padding: 0.5em;
+            }
+
+            .mt-table td {
+                border: 1px solid #333;
+                padding: 0.5em;
+            }
+
+            td.mt-name-cell {
+                white-space: nowrap;
+            }
+         </style>
+         <style media="print">
+            .mt-table form input[type='submit'] {
+               display:none;
+             }
+             #xmpp-viewlet,
+             div form,
+             div#plone-document-byline
+             { display: None; }
+         </style>
+         </metal:block>
+</head>
+<body>
+   <div metal:fill-slot="content-core">
+                <div style="text-align:right;padding-bottom:10px">
+                   <span id="calendarbuttons">
+                      <input  type="radio"
+                              id="calendarbutton"
+                              tal:attributes="href string:${context/absolute_url};
+                                             checked python:view.current() == 'calendar' and 'checked'"
+                              name="calendarbuttons"/>
+                              <label for="calendarbutton"> Calendar View</label>
+                      <input  type="radio"
+                              id="listingbutton"
+                              tal:attributes="href string:${context/absolute_url}/list.html;
+                                             checked python:view.current() == 'list.html' and 'checked'"
+                              name="calendarbuttons"/>
+                              <label for="listingbutton"> List View</label>
+                     <input type="radio"
+                              id="upcomingeventsbutton"
+                              tal:attributes="href string:${context/absolute_url}/upcoming.html;
+                                             checked python:view.current() == 'upcoming.html' and 'checked'"
+                              name="calendarbuttons"/>
+                              <label for="upcomingeventsbutton">
+                                 Upcoming</label>
+                     <input type="radio"
+                              id="pasteventsbutton"
+                              tal:attributes="href string:${context/absolute_url}/past.html;
+                                             checked python:view.current() == 'past.html' and 'checked'"
+                              name="calendarbuttons"/>
+                              <label for="pasteventsbutton">Past</label>
+                    <input type="radio"
+                            id="calendartablebutton"
+                            tal:attributes="href string:${context/absolute_url}/calendartable"
+                            checked="checked"
+                            name="calendarbuttons"/>
+                            <label for="calendartablebutton">Table</label>
+                   </span>
+                <script>
+                  jq('#calendarbuttons').buttonset();
+                  jq('#calendarbuttons input').button().click(function() {
+                     window.location = jq(this).attr('href');
+                  });
+                </script>
+            </div>
+
+       <table>
+           <table style="width:100%">
+               <tr>
+                   <td>
+                       <form tal:attributes="action request/getURL" method="GET">
+                           <select name="month">
+                               <option tal:repeat="m view/months" 
+                               tal:attributes="value m/value;
+                               selected m/selected"
+                               tal:content="m/name"></option>
+                           </select>
+                           <input type="submit" value="Update"/>
+                       </form>
+                   </td>
+                   <td style="text-align:right">
+                       <form tal:attributes="action string:${context/absolute_url}/calendartable_print"
+                            method="GET">
+                            <input type="hidden" name="month" tal:attributes="value view/month"/>
+                            <input type="submit" value="Download PDF"/>
+                        </form>
+                   </td>
+               </tr>
+           </table>
+       </table>
+
+     <h1 tal:condition="view/events">Events</h1>
+     <table tal:condition="view/events" width="100%" class="mt-table">
+         <tr>
+             <th>Date</th>
+             <th>Activity / Purpose</th>
+             <th>Place</th>
+             <th>Contact Person</th>
+         </tr>
+         <tr tal:repeat="event view/events">
+             <tal:block define="event_obj event/getObject">
+             <td><span tal:content='python:event.start.strftime("%d %b")'></span>&nbsp;-&nbsp;<span tal:content='python:event.end.strftime("%d %b")'></span></td>
+             <td><a tal:attributes="href event_obj/absolute_url"><span tal:content="event/Title"></span></a>
+             <td><span tal:content="event/location | nothing"></span>
+             <td>
+                 <span tal:content="event_obj/contactName"></span>
+             </td>
+             </tal:block>
+        </tr>
+
+     </table>
+
+     <h1 tal:condition="view/missions">Missions</h1>
+     <table tal:condition="view/missions" width="100%" class="mt-table">
+         <tr>
+             <th>Date</th>
+             <th>Purpose</th>
+             <th>Office</th>
+             <th>Location</th>
+             <th>Contact Person</th>
+         </tr>
+         <tr tal:repeat="mission view/missions">
+             <tal:block define="mission_obj mission/getObject">
+             <td><span tal:content='python:mission.start.strftime("%d %b")'></span>&nbsp;-&nbsp;<span tal:content='python:mission.end.strftime("%d %b")'></span></td>
+             <td><a tal:attributes="href mission_obj/absolute_url"><span tal:content="mission/Title"></span></a>
+                 <td><span tal:repeat="offices mission/office">
+                         <span tal:replace="offices"></span>
+                         <span tal:replace="string: ," tal:condition="not: repeat/offices/end">,</span>
+                     </span>
+             </td>
+             <td><span tal:content="mission/mission_event_location | nothing"></span>
+             <td>
+                 <span tal:content="mission_obj/contactName"></span>
+             </td>
+             </tal:block>
+        </tr>
+
+     </table>
+
+
+
+  </div>
+</body>
+</html>

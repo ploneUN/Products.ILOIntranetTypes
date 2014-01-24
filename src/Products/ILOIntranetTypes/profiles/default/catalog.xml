@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+  <index name="getOutcome" 
+         meta_type="FieldIndex">
+    <indexed_attr value="getOutcome"/>
+  </index>
+  <index name="getDistribution" 
+         meta_type="KeywordIndex">
+    <indexed_attr value="getDistribution"/>
+  </index>
+  <index name="mission_location" 
+         meta_type="KeywordIndex">
+    <indexed_attr value="mission_location"/>
+  </index>
+  <index name="theme" 
+         meta_type="KeywordIndex">
+    <indexed_attr value="theme"/>
+  </index>
+  <index name="country" 
+         meta_type="KeywordIndex">
+    <indexed_attr value="country"/>
+  </index>
+  <index name="mission_event_location" 
+         meta_type="FieldIndex">
+    <indexed_attr value="mission_event_location"/>
+  </index>
+  <index name="office" 
+         meta_type="KeywordIndex">
+    <indexed_attr value="office"/>
+  </index>
+  <index name="iib_countries" 
+         meta_type="KeywordIndex">
+    <indexed_attr value="iib_countries"/>
+  </index>
+  <index name="members" 
+         meta_type="ZCTextIndex">
+    <indexed_attr value="members"/>
+    <extra name="index_type"
+           value="Okapi BM25 Rank" />
+    <extra name="lexicon_id"
+           value="plaintext_lexicon" />
+  </index>
+  <index name="domestic" 
+         meta_type="KeywordIndex">
+    <indexed_attr value="domestic"/>
+  </index>
+  <index name="getAdministrative_unit" 
+         meta_type="KeywordIndex">
+    <indexed_attr value="getAdministrative_unit"/>
+  </index>
+  <index name="getTechnical_unit" 
+         meta_type="KeywordIndex">
+    <indexed_attr value="getTechnical_unit"/>
+  </index>
+  <index name="to_remind" 
+         meta_type="BooleanIndex">
+    <indexed_attr value="to_remind"/>
+  </index>
+  <column value="getOutcome"/>
+  <column value="getDistribution"/>
+  <column value="getMission_location"/>
+  <column value="getTheme"/>
+  <column value="getCountry"/>
+  <column value="getMission_event_location"/>
+  <column value="getOffice"/>
+  <column value="getIib_countries"/>
+  <column value="getMembers"/>
+  <column value="getDomestic"/>
+  <column value="getAdministrative_unit"/>
+  <column value="getTechnical_unit"/>
+<!-- ##code-section FOOT -->
+  <column value="distribution" />
+  <column value="office" />
+  <column value="mission_event_location" />
+  <column value="mission_location" />
+  <column value="domestic"/>
+  <column value="country"/>  
+  <column value="to_remind"/>  
+<!-- ##/code-section FOOT -->
+</object>

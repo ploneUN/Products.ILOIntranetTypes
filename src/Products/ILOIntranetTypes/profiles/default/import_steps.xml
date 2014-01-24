@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<import-steps>
+
+ 
+
+
+ <import-step 
+    id="ILOIntranetTypes-Update-RoleMappings" 
+    handler="Products.ILOIntranetTypes.setuphandlers.updateRoleMappings"
+    title="Update Workflow role mappings for ILOIntranetTypes"
+    version="2011-09-21T11:38:03.558432">
+   <dependency step="ILOIntranetTypes-QI-dependencies"/>
+   updates the workflow role mappings for ILOIntranetTypes
+ </import-step>
+
+ <import-step 
+    id="ILOIntranetTypes-postInstall" 
+    handler="Products.ILOIntranetTypes.setuphandlers.postInstall"
+    title="manual coded post-install for ILOIntranetTypes"
+    version="2011-09-21T11:38:03.558432">
+   <dependency step="ILOIntranetTypes-QI-dependencies"/>
+   manual coded post-install for ILOIntranetTypes
+ </import-step>
+
+<!-- ##code-section ADDITIONALSTEPS -->
+<!-- ##/code-section ADDITIONALSTEPS -->
+
+</import-steps>
+ 

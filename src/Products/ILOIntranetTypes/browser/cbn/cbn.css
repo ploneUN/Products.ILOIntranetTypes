@@ -1,0 +1,182 @@
+table.listing#cbn {
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}
+
+
+table.listing#cbn th#cbn-title {
+    background: none;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}
+
+#header-ilo h1{
+    text-align: center;
+    font-weight:bold;
+    font-size: 20pt;
+}
+
+#header-ilo h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight:bold;
+    font-size: 125%;
+    padding-bottom: 0.5em;
+}
+
+table.listing#cbn th {
+    font-size: 125%;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid black;
+    padding-left: 1em;
+}   
+
+table.listing#cbn td {
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}   
+
+table.listing#cbn dt {
+    font-size: 100%;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: underline;
+    display: inline;
+    margin-right: 0.5em;
+}
+
+table.listing#cbn dd {
+    font-size: 100%;
+    display: inline;
+    margin: 0;
+}
+
+ 
+table#cbn.grid tbody tr td dl.file  {
+ font-style: normal;
+ font-weight: none;
+ text-decoration:none;
+ font-size: 90%;
+}
+
+table#cbn.grid tbody tr td dl.file dt  {
+ text-decoration:none;
+ font-style: normal;
+ font-weight: bold;
+}
+
+table#cbn.grid tbody tr td h1,h2 {
+    font-weight: normal;
+    font-size: 120%;
+    text-decoration: underline;
+    border-bottom: none;
+}
+
+table.listing#cbn h3 {
+    font-size: 120%;
+    font-weight: normal;
+    font-style: italic;
+    text-decoration: none;
+}   
+
+
+table#cbn.grid tbody tr td#governing-body div div {
+margin: 0.5em 0;
+}
+table#cbn.grid tbody tr td#governing-body {
+padding: 0 0.5em;
+margin: 0;
+}
+
+td#governing-body table.listing  {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+table#cbn td#governing-body th {
+    border: none;
+    background: none;
+    font-size: 100%;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: underline;
+    padding: 0;
+    text-vertical-align: center;
+}
+
+td#governing-body td  {
+    font-size: 100%;
+    text-vertical-align: center;
+
+}
+
+table#cbn table.grid.listing.staff th{
+border: 1px solid black;
+padding: 0.5em;
+text-align: center;
+}
+
+table#cbn table.grid.listing.staff td{
+    text-align: center;
+    border: 1px solid black;
+    padding: 0.5em;
+}
+
+#content div.visualNoPrint.cbnMenu  {
+    width: 95%;
+    margin-right:i auto;
+    margin-left: auto;
+}
+
+#content div.visualNoPrint.cbnMenu ul {
+    list-style-type: none;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    display: inline-block;
+}
+
+#content div.visualNoPrint.cbnMenu li.selected
+ {
+    background: #87B829;
+}
+
+
+#content div.visualNoPrint.cbnMenu li
+ {
+    display: inline-block; 
+    padding: 5px 10px 5px 10px;
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: none;
+    background: #205C90;
+}
+
+#content div.visualNoPrint.cbnMenu a  {
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+div#kupu-editor-fieldname iframe.kupu-editor-iframe {
+  height: 200px;
+  width: 99%;
+}
+
+div#governing-body div div table.listing th {
+    width: 50px;
+}

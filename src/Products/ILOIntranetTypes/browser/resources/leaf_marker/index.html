@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <head>
+    <title>Missions</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+    <link rel="stylesheet" href="leaflet/MarkerCluster.css" />
+    <link rel="stylesheet" href="leaflet/MarkerCluster.Default.css" />
+    <style type="text/css">
+    #info-template {display: none}
+    #map {width: 900px; height: 600px}
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+
+  <div id="info-template">
+    <div id="info-content">
+      <h1 id="firstHeading" class="firstHeading">{0}</h1>
+      <div id="bodyContent">
+	<p>{1}</p>
+	<p>{2}</p>
+	<a href="{3}">Info</a>	
+      </div>
+    </div>
+  </div>
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+  <script src="leaflet/leaflet.markercluster.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+  <script type="text/javascript" src="map.function.js"></script>
+</html>

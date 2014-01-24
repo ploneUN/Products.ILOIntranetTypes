@@ -1,0 +1,206 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+
+  <metal:head define-macro="topslot">
+  </metal:head>
+  <metal:head define-macro="javascript_head">
+  </metal:head>
+
+  <body>
+
+      <metal:body define-macro="body">
+            <metal:default_body use-macro="here/edit_macros/macros/body">
+              <!-- inside the fieldset but above all the fields -->
+              <metal:block fill-slot="extra_top">
+              </metal:block>
+
+              <metal:block fill-slot="widgets">
+                   <tal:tabbed tal:condition="allow_tabbing | nothing">
+
+              <p class="description">All fields are
+              required.</p>
+ 
+              <div class="field">
+                 <div metal:use-macro="python: here.widget('title',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('assignment_title',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('office',mode='edit')" />
+               </div> 
+
+              <h3>Assignment Period</h3>
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('startDate',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('endDate',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('theme',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('contract_type',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('assignment_grade',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('key_contacts',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('key_resources',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('outstanding_issues',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('lessons_learned',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('advice',mode='edit')" />
+               </div> 
+
+              <div class="field">
+                 <div metal:use-macro="python:
+                     here.widget('advice_not',mode='edit')" />
+               </div> 
+ 
+             <h3>Share your top resource</h3>
+
+             <p>Please click browse to select up to 10 of your top files or supportive documents e.g. key list of contacts, training material, list of projects currently backstopped, power point presentations, reports and other valuable material to be shared with your successor.
+             </p>
+
+              <div id="resources-wrapper" style="width:100%">
+                  <div id="resources-left" style="float:left; width=50%">
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file1',mode='edit')" />
+                       </div> 
+
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file2',mode='edit')" />
+                       </div> 
+
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file3',mode='edit')" />
+                       </div> 
+
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file4',mode='edit')" />
+                       </div> 
+
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file5',mode='edit')" />
+                       </div> 
+
+                     </div>
+                 <div id="resources-right" style="float:left;">
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file6',mode='edit')" />
+                       </div> 
+
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file7',mode='edit')" />
+                       </div> 
+
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file8',mode='edit')" />
+                       </div> 
+
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file9',mode='edit')" />
+                       </div> 
+
+                      <div class="field">
+                         <div metal:use-macro="python:
+                             here.widget('file10',mode='edit')" />
+                         </div>
+                 </div>
+            </div>
+
+           <div class="visualClear" />
+
+             </tal:tabbed>
+            <tal:nottabbed tal:condition="not: allow_tabbing | nothing">
+                <tal:fields repeat="field python:schematas[fieldset].editableFields(here, visible_only=True)">
+                  <metal:fieldMacro use-macro="python:here.widget(field.getName(), mode='edit')" />
+                </tal:fields>
+            </tal:nottabbed>
+
+
+              </metal:block>
+
+
+
+            </metal:default_body>
+
+
+
+        </metal:body>
+
+
+
+
+
+
+        <!-- footer, by line created date etc. -->
+
+
+
+        <metal:footer define-macro="footer">
+        </metal:footer>
+
+
+
+
+
+
+
+  </body>
+
+
+
+
+
+
+
+</html>

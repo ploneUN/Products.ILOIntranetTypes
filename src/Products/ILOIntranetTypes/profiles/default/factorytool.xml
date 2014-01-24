@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_factory" meta_type="Plone Factory Tool">
+ <factorytypes>
+  <type portal_type="MissionReport"/>
+  <type portal_type="Mission"/>
+  <type portal_type="ILOEvent"/>
+  <type portal_type="InternalCountryBrief"/>
+  <type portal_type="StaffKnowledgeTransfer"/>
+ </factorytypes>
+</object>
