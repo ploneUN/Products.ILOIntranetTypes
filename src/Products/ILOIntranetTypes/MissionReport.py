@@ -148,8 +148,8 @@ schema = Schema((
     StringField(
         name='mission_location_other',
         widget=StringField._properties['widget'](
-            label="Other Regions",
-            description="If Other Regions was selected, please specify country location.",
+            label="Other",
+            description="If Other was selected, please specify country location.",
             label_msgid='ILOIntranetTypes_label_mission_location_other',
             description_msgid='ILOIntranetTypes_help_mission_location_other',
             i18n_domain='ILOIntranetTypes',
