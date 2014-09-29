@@ -62,7 +62,7 @@ schema = Schema((
             i18n_domain='ILOIntranetTypes',
         ),
         searchable=1,
-        vocabulary=['Afghanistan','Bangladesh', 'Bhutan','Brunei','Cambodia', 'China', 'Cook Islands', 'Democratic People\'s Republic of Korea', 'Federated States of Micronesia', 'Fiji', 'India', 'Indonesia', 'Iran', 'Kiribati', 'Lao PDR', 'Malaysia', 'Maldives', 'Marshall Islands', 'Mongolia', 'Myanmar', 'Nauru', 'Nepal', 'Niue', 'Pakistan', 'Palau', 'Papua New Guinea', 'Philippines', 'Republic of Korea', 'Samoa','Singapore', 'Solomon Islands', 'Sri Lanka', 'Thailand', 'Timor-Leste', 'Tokelau', 'Tonga', 'Tuvalu', 'Vanuatu','Viet Nam','Regional'],
+        vocabulary=['Afghanistan','Australia','Bangladesh', 'Bhutan','Brunei','Cambodia', 'China', 'Cook Islands', 'Democratic People\'s Republic of Korea', 'Federated States of Micronesia', 'Fiji', 'India', 'Indonesia', 'Iran', 'Kiribati', 'Lao PDR', 'Malaysia', 'Maldives', 'Marshall Islands', 'Mongolia', 'Myanmar', 'Nauru', 'Nepal','New Zealand', 'Niue', 'Pakistan', 'Palau', 'Papua New Guinea', 'Philippines', 'Republic of Korea', 'Samoa','Singapore', 'Solomon Islands', 'Sri Lanka', 'Thailand', 'Timor-Leste', 'Tokelau', 'Tonga', 'Tuvalu', 'Vanuatu','Viet Nam','Regional'],
         multiValued=1,
     ),
     StringField(
