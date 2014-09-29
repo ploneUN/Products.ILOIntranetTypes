@@ -4,7 +4,7 @@ Changelog
 1.16 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Bump version, previous egg was not released properly.
 
 
 1.15 (2014-09-26)
