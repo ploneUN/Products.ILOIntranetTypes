@@ -39,7 +39,7 @@ schema = Schema((
             i18n_domain='ILOIntranetTypes',
         ),
         searchable=1,
-        vocabulary=['Afghanistan','Bangladesh', 'Bhutan','Brunei','Cambodia', 'China', 'Cook Islands', 'Democratic People\'s Republic of Korea', 'Federated States of Micronesia', 'Fiji', 'India', 'Indonesia', 'Iran', 'Japan', 'Kiribati', 'Lao PDR', 'Malaysia', 'Maldives', 'Marshall Islands', 'Mongolia', 'Myanmar', 'Nauru', 'Nepal', 'Niue', 'Pakistan', 'Palau', 'Papua New Guinea', 'Philippines', 'Republic of Korea', 'Samoa','Singapore', 'Solomon Islands', 'Sri Lanka', 'Thailand', 'Timor-Leste', 'Tokelau', 'Tonga', 'Tuvalu', 'Vanuatu','Viet Nam','HQ','ITC Turin','Other Regions'],
+        vocabulary=['Afghanistan','Australia','Bangladesh', 'Bhutan','Brunei','Cambodia', 'China', 'Cook Islands', 'Democratic People\'s Republic of Korea', 'Federated States of Micronesia', 'Fiji', 'India', 'Indonesia', 'Iran', 'Japan', 'Kiribati', 'Lao PDR', 'Malaysia', 'Maldives', 'Marshall Islands', 'Mongolia', 'Myanmar', 'Nauru', 'Nepal','New Zealand', 'Niue', 'Pakistan', 'Palau', 'Papua New Guinea', 'Philippines', 'Republic of Korea', 'Samoa','Singapore', 'Solomon Islands', 'Sri Lanka', 'Thailand', 'Timor-Leste', 'Tokelau', 'Tonga', 'Tuvalu', 'Vanuatu','Viet Nam','HQ','ITC Turin','Other'],
         multiValued=1,
     ),
     LinesField(
@@ -72,7 +72,7 @@ schema = Schema((
             label_msgid='ILOIntranetTypes_label_mission_event_location',
             i18n_domain='ILOIntranetTypes',
         ),
-        vocabulary=['Afghanistan','Bangladesh', 'Bhutan','Brunei','Cambodia', 'China', 'Cook Islands', 'Democratic People\'s Republic of Korea', 'Federated States of Micronesia', 'Fiji', 'India', 'Indonesia', 'Iran', 'Japan', 'Kiribati', 'Lao PDR', 'Malaysia', 'Maldives', 'Marshall Islands', 'Mongolia', 'Myanmar', 'Nauru', 'Nepal', 'Niue', 'Pakistan', 'Palau', 'Papua New Guinea', 'Philippines', 'Republic of Korea','Singapore', 'Samoa', 'Solomon Islands', 'Sri Lanka', 'Thailand', 'Timor-Leste', 'Tokelau', 'Tonga', 'Tuvalu', 'Vanuatu','Viet Nam','HQ','ITC Turin','Other Regions'],
+        vocabulary=['Afghanistan','Australia','Bangladesh', 'Bhutan','Brunei','Cambodia', 'China', 'Cook Islands', 'Democratic People\'s Republic of Korea', 'Federated States of Micronesia', 'Fiji', 'India', 'Indonesia', 'Iran', 'Japan', 'Kiribati', 'Lao PDR', 'Malaysia', 'Maldives', 'Marshall Islands', 'Mongolia', 'Myanmar', 'Nauru', 'Nepal','New Zealand','Niue', 'Pakistan', 'Palau', 'Papua New Guinea', 'Philippines', 'Republic of Korea','Singapore', 'Samoa', 'Solomon Islands', 'Sri Lanka', 'Thailand', 'Timor-Leste', 'Tokelau', 'Tonga', 'Tuvalu', 'Vanuatu','Viet Nam','HQ','ITC Turin','Other'],
         searchable=1,
     ),
     LinesField(
@@ -97,7 +97,7 @@ schema = Schema((
             description_msgid='ILOIntranetTypes_help_iib_countries',
             i18n_domain='ILOIntranetTypes',
         ),
-        vocabulary=['Afghanistan','Bangladesh', 'Bhutan', 'Cambodia', 'China', 'Cook Islands', 'Democratic People\'s Republic of Korea', 'Federated States of Micronesia', 'Fiji', 'India', 'Indonesia', 'Iran','Japan', 'Kiribati', 'Lao PDR', 'Malaysia', 'Maldives', 'Marshall Islands', 'Mongolia', 'Myanmar', 'Nauru', 'Nepal', 'Niue', 'Pakistan', 'Palau', 'Papua New Guinea', 'Philippines', 'Republic of Korea','Singapore', 'Samoa', 'Solomon Islands', 'Sri Lanka', 'Thailand', 'Timor-Leste', 'Tokelau', 'Tonga', 'Tuvalu', 'Vanuatu','Viet Nam','HQ','ITC Turin','Other Regions'],
+        vocabulary=['Afghanistan','Bangladesh', 'Bhutan', 'Cambodia', 'China', 'Cook Islands', 'Democratic People\'s Republic of Korea', 'Federated States of Micronesia', 'Fiji', 'India', 'Indonesia', 'Iran','Japan', 'Kiribati', 'Lao PDR', 'Malaysia', 'Maldives', 'Marshall Islands', 'Mongolia', 'Myanmar', 'Nauru', 'Nepal', 'Niue', 'Pakistan', 'Palau', 'Papua New Guinea', 'Philippines', 'Republic of Korea','Singapore', 'Samoa', 'Solomon Islands', 'Sri Lanka', 'Thailand', 'Timor-Leste', 'Tokelau', 'Tonga', 'Tuvalu', 'Vanuatu','Viet Nam','HQ','ITC Turin','Other'],
         multiValued=1,
     ),
     LinesField(
