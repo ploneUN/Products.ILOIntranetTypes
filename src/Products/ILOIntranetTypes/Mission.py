@@ -159,6 +159,11 @@ class Mission(BaseContent, ATCTContent, HistoryAwareMixin, BrowserDefaultMixin):
     ##/code-section class-header
 
     # Methods
+    def post_validate(self, REQUEST, errors):
+        if REQUEST['startDate'] and REQUEST['endDate']:
+            if REQUEST['startDate'] > REQUEST['endDate']:
+                errors['endDate'] = "End date should not be earlier than start date."
+    
 
     # Manually created methods
 
