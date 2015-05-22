@@ -170,6 +170,10 @@ class Mission(BaseContent, ATCTContent, HistoryAwareMixin, BrowserDefaultMixin):
     _at_rename_after_creation = True
 
     schema = Mission_schema
+    schema['startDate'].widget.show_hm = False
+    schema['startDate'].widget.format = '%b %d, %Y'
+    schema['endDate'].widget.show_hm = False
+    schema['endDate'].widget.format = '%b %d, %Y'
 
     ##code-section class-header #fill in your manual code here
     ##/code-section class-header
