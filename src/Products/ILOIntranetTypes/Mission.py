@@ -29,6 +29,9 @@ from Products.ATContentTypes.content.event import ATEventSchema
 from Products.ILOIntranetTypes.ILOIntranetBase import ILOIntranetBase
 from Products.CMFCore.utils import getToolByName
 
+from simplejson import dumps as jsondumps
+from collective.atautocomplete.widgets import LinesAutoCompleteWidget
+
 ##/code-section module-header
 
 copied_fields = {}
@@ -54,8 +57,8 @@ copied_fields['endDate'] = ATEventSchema['endDate'].copy()
 copied_fields['endDate'].required = 1
 copied_fields['endDate'].widget.label = "Mission End Date"
 copied_fields['endDate'].widget.description = "Please change the the time to pm, so that the Calendar shows the right date for your Mission return."
-copied_fields['members'] = ILOIntranetBase.schema['members'].copy()
-copied_fields['members'].imports = "ILOIntranetBase"
+#copied_fields['members'] = ILOIntranetBase.schema['members'].copy()
+#copied_fields['members'].imports = "ILOIntranetBase"
 copied_fields['text'] = ATEventSchema['text'].copy()
 copied_fields['text'].widget.label = "Notes"
 copied_fields['office'] = ILOIntranetBase.schema['office'].copy()
@@ -94,7 +97,20 @@ schema = Schema((
 
     copied_fields['endDate'],
 
-    copied_fields['members'],
+    #copied_fields['members'],
+    LinesField(
+        name='members',
+        widget=LinesAutoCompleteWidget(
+            label="Mission Members",
+            description="List of Mission Members, separated with comma with principal member first.",
+            label_msgid='ILOIntranetTypes_label_members',
+            description_msgid='ILOIntranetTypes_help_members',
+            i18n_domain='ILOIntranetTypes',
+        ),
+        default_content_type='text/plain',
+        allowable_content_types="('text/plain')",
+        vocabularyjsonurl="missionmembers",
+    ),
 
     copied_fields['text'],
 
