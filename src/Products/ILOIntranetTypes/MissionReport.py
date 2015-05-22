@@ -48,9 +48,9 @@ copied_fields['description'].schemata = "default"
 copied_fields['description'].default_method = "MissionDescription"
 copied_fields['description'].widget.label = "Overall Objective"
 copied_fields['description'].widget.description = "Briefly describe the objectives of the mission."
-copied_fields['members'] = ILOIntranetBase.schema['members'].copy()
-copied_fields['members'].imports = "ILOIntranetBase"
-copied_fields['members'].default_method = "defMembers"
+#copied_fields['members'] = ILOIntranetBase.schema['members'].copy()
+#copied_fields['members'].imports = "ILOIntranetBase"
+#copied_fields['members'].default_method = "defMembers"
 copied_fields['office'] = ILOIntranetBase.schema['office'].copy()
 copied_fields['office'].required = 1
 copied_fields['office'].default_method = "defOffice"
@@ -121,7 +121,20 @@ schema = Schema((
         required=True,
         searchable=True,
     ),
-    copied_fields['members'],
+    #copied_fields['members'],
+    LinesField(
+        name='members',
+        widget=LinesAutoCompleteWidget(
+            label="Mission Members",
+            description="List of Mission Members, separated with comma with principal member first.",
+            label_msgid='ILOIntranetTypes_label_members',
+            description_msgid='ILOIntranetTypes_help_members',
+            i18n_domain='ILOIntranetTypes',
+        ),
+        default_content_type='text/plain',
+        allowable_content_types="('text/plain')",
+        vocabularyjsonurl="missionmembers",
+    ),
 
     copied_fields['office'],
 
@@ -347,7 +360,7 @@ class MissionReport(BaseContent, ATCTContent, HistoryAwareMixin, ATCTImageTransf
             path = self.REQUEST.physicalPathFromURL(referrer)
             if path[-1] in ['view']:
                 path = path[:-1]
-
+            
             mission = catalog.searchResults(path={'query':"/".join(path),'depth':0},
                                 portal_type='Mission')
             if len(mission):

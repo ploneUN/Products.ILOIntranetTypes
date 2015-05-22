@@ -50,12 +50,19 @@ class MultiSelectWithAutoComplete(BrowserView):
 # field members. Authors will also need to have index added.
 #
 
-# class MissionMembers(BrowserView):
-#    def __call__(self):
-# 
-#        catalog = getToolByName(self.context, 'portal_catalog')
-#        results =  catalog.uniqueValuesFor('getMembers')
-#        return results
+class MissionMembers(BrowserView):
+    def __call__(self):
+ 
+        catalog = getToolByName(self.context, 'portal_catalog')
+        members =  catalog.uniqueValuesFor('getMembers')
+        results = []
+        for member in members:
+            if member:
+                for mem in member:
+                    if mem not in results:
+                        results.append(mem)
+        
+        return jsondumps(results)
 # 
 # class Authors(BrowserView):
 #    def __call__(self):

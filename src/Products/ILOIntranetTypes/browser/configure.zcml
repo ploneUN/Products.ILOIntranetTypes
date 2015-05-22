@@ -61,7 +61,7 @@
         attribute="render"/>
 
 
-<!-- Placeholder browser pages for Mission Members and Authors
+ <!--Placeholder browser pages for Mission Members and Authors-->
 
 	<browser:page
 	      for="*"
@@ -71,6 +71,6 @@
 
 
 
--->
+
 
 </configure>
