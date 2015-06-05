@@ -1,10 +1,21 @@
 Changelog
 =========
 
-1.20 (unreleased)
------------------
-
+1.22.dev0 (unreleased)
+---------------------
 - Nothing changed yet.
+
+
+1.21 (2015-06-05)
+-----------------
+- add date validation to mission report
+- increase size of multi-select widget for themes
+- add reminder to save 
+
+1.20 (2015-05-23)
+-----------------
+- add date validation to mission
+- auto complete member fields
 
 
 1.19 (2015-01-19)
