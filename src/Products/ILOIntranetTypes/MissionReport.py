@@ -468,6 +468,11 @@ class MissionReport(BaseContent, ATCTContent, HistoryAwareMixin, ATCTImageTransf
         offices = portal_properties.ilo_properties.getProperty('officeopts')
 
         return offices
+    
+    def post_validate(self, REQUEST, errors):
+        if REQUEST['startDate'] and REQUEST['endDate']:
+            if REQUEST['startDate'] > REQUEST['endDate']:
+                errors['endDate'] = "End date should not be earlier than start date."
 
 
 
