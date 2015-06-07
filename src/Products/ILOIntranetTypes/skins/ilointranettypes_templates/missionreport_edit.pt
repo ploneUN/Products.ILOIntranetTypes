@@ -15,12 +15,12 @@
   
 
   <metal:head define-macro="javascript_head">
-    <!-- Glenn, add your JS here -->
+
     <script>
     
 $(document).ready(function(){
       
-      setTimeout(function(){alert("As you are completing the form you are advised to save your work regularly to prevent your inputs being lost through internet interruptions")}, 600000);
+      setTimeout(function(){alert("To minimize possible loss of data, you are advised to periodically save your current work")}, 600000);
      })
 
 </script>
@@ -30,12 +30,13 @@ $(document).ready(function(){
 
   <body>
 
-        <!-- header, h1 of Edit <Type>, schemata links and webdav lock message -->
+        <!-- header, h1 of Edit <Type>, schemata links and webdav lock message
 
         <metal:header define-macro="header">
             <h1>dssa</h1>
         </metal:header>
-
+        
+        -->
         
 
         <!-- typedesription, typeDescription from the content type -->
