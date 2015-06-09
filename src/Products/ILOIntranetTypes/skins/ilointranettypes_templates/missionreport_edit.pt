@@ -20,7 +20,7 @@
     
 $(document).ready(function(){
       
-      setTimeout(function(){alert("To minimize possible loss of data, you are advised to periodically save your current work")}, 600000);
+      setTimeout(function(){alert("To minimize possible loss of data, you are advised to periodically save your current work")}, 120000);
      })
 
 </script>
