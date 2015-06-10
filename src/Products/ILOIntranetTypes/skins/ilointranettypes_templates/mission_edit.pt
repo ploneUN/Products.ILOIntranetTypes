@@ -9,15 +9,118 @@
 
 
   <metal:head define-macro="topslot">
-
+      <style type="text/css">
+            
+      </style>
   </metal:head>
+
+  
 
   
 
   <metal:head define-macro="javascript_head">
     <script>
+      
+      function compareDate(startDate, endDate, typeDate){
+            
+            if (typeDate == 'start') {
+                  if (startDate.getTime() > endDate.getTime()) {
+                        alert('End date should not be earlier than start date.');
+                        if (endDate.getDate() >= 0 && endDate.getDate() <= 8) {
+                              start_day = '0'+endDate.getDate().toString();
+                        }else{
+                              start_day = endDate.getDate().toString();
+                        }
+                        
+                        
+                        
+                        if (endDate.getMonth() >= 0 && endDate.getMonth() <= 8) {
+                              start_month = '0'+(endDate.getMonth()+1).toString();
+                        }else{
+                              start_month = (endDate.getMonth()+1).toString();
+                        }
+                        
+                        start_year = endDate.getFullYear().toString();
+                        $('select#edit_form_startDate_0_day').val(start_day);
+                        $('select#edit_form_startDate_0_month').val(start_month);
+                        $('select#edit_form_startDate_0_year').val(start_year);
+                  }
+            }else if ('end') {
+                  
+                  if (startDate.getTime() > endDate.getTime()) {
+                        alert('End date should not be earlier than start date.');
+                        if (startDate.getDate() >= 0 && startDate.getDate() <= 8) {
+                              start_day = '0'+startDate.getDate().toString();
+                        }else{
+                              start_day = startDate.getDate().toString();
+                        }
+                        
+                        
+                        if (startDate.getMonth() >= 0 && startDate.getMonth() <= 8) {
+                              start_month = '0'+(startDate.getMonth()+1).toString();
+                        }else{
+                              start_month = (startDate.getMonth()+1).toString();
+                        }
+                        
+                        start_year = startDate.getFullYear().toString();
+                        $('select#edit_form_endDate_1_day').val(start_day);
+                        $('select#edit_form_endDate_1_month').val(start_month);
+                        $('select#edit_form_endDate_1_year').val(start_year);
+                        
+                  }
+            }
+      }
+      
+      function createDate(day, month, year){
+            return new Date((month+'/'+day+'/'+year).replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3"))
+      }
+      
+      function createStartDate(){
+            start_day = $('select#edit_form_startDate_0_day').val().toString();
+            start_month = $('select#edit_form_startDate_0_month').val().toString();
+            start_year = $('select#edit_form_startDate_0_year').val().toString();
+            return createDate(start_day, start_month, start_year);
+      }
+      
+      function createEndDate(){
+            end_day = $('select#edit_form_endDate_1_day').val().toString();
+            end_month = $('select#edit_form_endDate_1_month').val().toString();
+            end_year = $('select#edit_form_endDate_1_year').val().toString();
+            return createDate(end_day, end_month, end_year);
+      }
+      
+      function dayValue(val){
+            if (val >= 0 && val <= 8) {
+                  return '0'+val.toString();
+            }else{
+                  return val.toString();
+            }
+      }
+      
+      function monthValue(val) {
+            // ipasa ang value
+      }
+      
+      function yearValue(val){
+            return val.toString();
+      }
     
 $(document).ready(function(){
+      $('span#edit_form_endDate_1_popup').hide();
+      $('span#edit_form_startDate_0_popup').hide();
+      
+      start_day = $('select#edit_form_startDate_0_day').val().toString();
+      start_month = $('select#edit_form_startDate_0_month').val().toString();
+      start_year = $('select#edit_form_startDate_0_year').val().toString();
+      end_day = $('select#edit_form_endDate_1_day').val().toString();
+      end_month = $('select#edit_form_endDate_1_month').val().toString();
+      end_year = $('select#edit_form_endDate_1_year').val().toString();
+      
+      start_date = createStartDate();
+      end_date = createEndDate();
+      
+      
+      
       
       setTimeout(function(){
           alert("To minimize possible loss of data, you are advised to periodically save your current work");
@@ -25,6 +128,132 @@ $(document).ready(function(){
             alert("To minimize possible loss of data, you are advised to periodically save your current work")
           },600000);
       },120000);
+      
+      $('select#edit_form_startDate_0_day').on('change',function(){
+         new_day = $(this).val().toString();
+         
+         if (isNaN(createDate(new_day, start_month, start_year).getTime())) {
+            alert('Not a valid date.');
+            $(this).val(start_day);
+         }else{
+            //start_day = new_day;
+            start_date = createStartDate();
+            end_date = createEndDate();
+            compareDate(start_date, end_date, 'start');
+            start_day = $('select#edit_form_startDate_0_day').val().toString();
+            start_month = $('select#edit_form_startDate_0_month').val().toString();
+            start_year = $('select#edit_form_startDate_0_year').val().toString();
+            end_day = $('select#edit_form_endDate_1_day').val().toString();
+            end_month = $('select#edit_form_endDate_1_month').val().toString();
+            end_year = $('select#edit_form_endDate_1_year').val().toString();
+            
+         }
+         
+      });
+      
+      $('select#edit_form_startDate_0_month').on('change', function(){
+          new_month = $(this).val().toString();
+          if (isNaN(createDate(start_day, new_month, start_year).getTime())) {
+             alert('Not a valid date.');
+             start_date.getMonth();
+             $(this).val(start_month);
+          }else{
+            //start_month = new_month;
+            start_date = createStartDate();
+            end_date = createEndDate();
+            compareDate(start_date, end_date, 'start');
+            start_day = $('select#edit_form_startDate_0_day').val().toString();
+            start_month = $('select#edit_form_startDate_0_month').val().toString();
+            start_year = $('select#edit_form_startDate_0_year').val().toString();
+            end_day = $('select#edit_form_endDate_1_day').val().toString();
+            end_month = $('select#edit_form_endDate_1_month').val().toString();
+            end_year = $('select#edit_form_endDate_1_year').val().toString();
+            
+          }
+      });
+      
+      $('select#edit_form_startDate_0_year').on('change', function(){
+          new_year = $(this).val().toString();
+          
+          if (new_year == '0000') {
+            alert('Not a valid date.');
+            $(this).val(start_year);
+          }else{
+            //start_year = new_year;
+            start_date = createStartDate();
+            end_date = createEndDate();
+            compareDate(start_date, end_date, 'start');
+            start_day = $('select#edit_form_startDate_0_day').val().toString();
+            start_month = $('select#edit_form_startDate_0_month').val().toString();
+            start_year = $('select#edit_form_startDate_0_year').val().toString();
+            end_day = $('select#edit_form_endDate_1_day').val().toString();
+            end_month = $('select#edit_form_endDate_1_month').val().toString();
+            end_year = $('select#edit_form_endDate_1_year').val().toString();
+          }
+      });
+      
+      $('select#edit_form_endDate_1_day').on('change',function(){
+         new_day = $(this).val().toString();
+         
+         if (isNaN(createDate(new_day, end_month, end_year).getTime())) {
+            alert('Not a valid date.');
+            $(this).val(end_day);
+         }else{
+            end_day = new_day;
+            start_date = createStartDate();
+            end_date = createEndDate();
+            compareDate(start_date, end_date, 'end');
+            start_day = $('select#edit_form_startDate_0_day').val().toString();
+            start_month = $('select#edit_form_startDate_0_month').val().toString();
+            start_year = $('select#edit_form_startDate_0_year').val().toString();
+            end_day = $('select#edit_form_endDate_1_day').val().toString();
+            end_month = $('select#edit_form_endDate_1_month').val().toString();
+            end_year = $('select#edit_form_endDate_1_year').val().toString();
+         }
+         
+      });
+      
+      $('select#edit_form_endDate_1_month').on('change', function(){
+          new_month = $(this).val().toString();
+          if (isNaN(createDate(end_day, new_month, end_year).getTime())) {
+             alert('Not a valid date.');
+             $(this).val(end_month);
+          }else{
+            end_month = new_month;
+            start_date = createStartDate();
+            end_date = createEndDate();
+            compareDate(start_date, end_date, 'end');
+            start_day = $('select#edit_form_startDate_0_day').val().toString();
+            start_month = $('select#edit_form_startDate_0_month').val().toString();
+            start_year = $('select#edit_form_startDate_0_year').val().toString();
+            end_day = $('select#edit_form_endDate_1_day').val().toString();
+            end_month = $('select#edit_form_endDate_1_month').val().toString();
+            end_year = $('select#edit_form_endDate_1_year').val().toString();
+            
+          }
+      });
+      
+      $('select#edit_form_endDate_1_year').on('change', function(){
+          new_year = $(this).val().toString();
+          
+          if (new_year == '0000') {
+            alert('Not a valid date.');
+            $(this).val(end_year);
+          }else{
+            end_year = new_year;
+            start_date = createStartDate();
+            end_date = createEndDate();
+            compareDate(start_date, end_date, 'end');
+            start_day = $('select#edit_form_startDate_0_day').val().toString();
+            start_month = $('select#edit_form_startDate_0_month').val().toString();
+            start_year = $('select#edit_form_startDate_0_year').val().toString();
+            end_day = $('select#edit_form_endDate_1_day').val().toString();
+            end_month = $('select#edit_form_endDate_1_month').val().toString();
+            end_year = $('select#edit_form_endDate_1_year').val().toString();
+          }
+      });
+      
+      
      })
 
 </script>
