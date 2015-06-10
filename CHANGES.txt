@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.23 (2015-06-10)
+- add in-form date field validation
+- adjust reminder time settings
+
 1.22 (2015-06-07)
 ---------------------
 - fix template header and improve warning message 
