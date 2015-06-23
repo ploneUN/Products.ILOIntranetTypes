@@ -50,7 +50,7 @@ schema = Schema((
             label_msgid='ILOIntranetTypes_label_theme',
             description_msgid='ILOIntranetTypes_help_theme',
             i18n_domain='ILOIntranetTypes',
-            size = 18,
+            size = 5,
         ),
         vocabulary='theme_vocab',
         multiValued=1,
