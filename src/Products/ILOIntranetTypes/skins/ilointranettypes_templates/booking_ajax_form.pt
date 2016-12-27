@@ -142,9 +142,9 @@
               <label for="require_it"
                  i18n:translate="label_booking_requireit">Require IT
                  services/equipment</label>
-              <p>Enable to notify BKK Helpdesk about your IT requirements,
+              <p>Enable to notify Helpdesk about your IT requirements,
               otherwise availability of equipment/services will not be
-              guarranteed. Provide details in the comments below (e.g. laptop,
+              guaranteed. Provide details in the comments below (e.g. laptop,
               projector, videoconferencing, etc.). Note that this is a
               tentative request, the actual availability will be confirmed by a
               return email from Helpdesk.</p>
